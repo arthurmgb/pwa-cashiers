@@ -1,0 +1,195 @@
+/* Start Var */
+
+.mobile{
+    display: none;
+}
+.mbl-context{
+    display: none;
+}
+.content-mbl{
+    display: none;
+}
+
+/* End Start Var */
+
+/* Top */
+
+.mbl-top-nav{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 50px;
+    color: #fff;
+    
+}
+.mobile-brand-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 10px;
+}
+
+/* End Top */
+
+/* Bottom */
+
+.mbl-bottom-nav{
+    background-color: #352B73;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100vw;
+    height: 80px;
+    overflow-x: auto;
+}
+.mbl-bottom-nav > a{
+    outline: none;
+}
+.mbl-menu-item{
+    background-color: #fff;
+    color: #352B73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin: 0px 5px;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mbl-menu-item:hover{
+    background-color: #f1f1f1;
+}
+.active-route{
+    background-color: #F472B6;
+    color: #fff;
+}
+.active-route:hover{
+    background-color: #F472B6;
+    color: #fff;
+}
+
+/* End Bottom */
+
+/* Home */
+
+    .mbl-home-title{
+        color: #444;
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    .mbl-img-user{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover; 
+        user-select: none;
+    }
+    .mbl-img-bear{
+        margin-left: -15px;
+        margin-bottom: -20px;
+        user-select: none;
+    }
+    .mbl-hr{
+        border: 1px solid #C3CAD1; 
+        width: 100%;
+        margin-right: -7px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .mbl-welcome-details{
+        background-color: #fff;
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 #e5e5e5;
+        border: 1px solid #e2e2e2;
+    }
+    .mbl-initial-msg{
+        color: #777;
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+    .mbl-hr-2{
+        border: 1px solid #C3CAD1; 
+        width: 80%;
+        margin: 2rem auto 1.5rem auto;
+    }
+    .mbl-home-subtitle{
+        color: #333;
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+    .mbl-home-link{
+        font-size: 1rem;
+        color: #7559da;
+    }
+
+/* End Home */
+
+/* Visão Geral */
+
+    .mbl-title-h2{
+        color: #333;
+        font-size: 1.8rem;
+        font-weight: 400;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .mbl-rend-flut{
+        width: fit-content;
+        background-color: #725bc2;
+        padding: 2px 6px;
+        color: #fff;
+        border-radius: 6px;
+        font-size: 12px;
+        user-select: none;
+    }
+
+/* End Visão Geral */
+
+
+/* Medias */
+
+@media only screen and (max-width: 600px){
+    .wrapper{
+        display: none;
+    }
+    .mobile{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .content-inicial{
+        display: none;
+    }
+    .uk-container{
+        display: none;
+    }
+    .content-mbl{
+        display: flex;
+    }
+    .desktop-context{
+        display: none;
+    }
+    .mbl-context{
+        background-color: #F3F4F6;
+        width: 100vw;
+        height: calc(100vh - 130px);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+}
+
+/* End Medias */
