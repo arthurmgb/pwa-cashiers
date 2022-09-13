@@ -454,6 +454,7 @@ body{
     transition: .2s;
 }
 .label-op{
+    width: 100%;
     position: relative;
     color: #666 !important;
     background-color: #fff;

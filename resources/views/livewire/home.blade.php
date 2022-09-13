@@ -10,9 +10,21 @@
                     Olá, {{ Auth::user()->name }}!
                 </h1>
                 
-                <img 
-                class="mbl-img-user mr-3" 
-                src="https://app.cashiers.com.br{{ Auth::user()->profile_photo_url }}">
+                <img id="mbl-global-user-img" class="mbl-img-user mr-3" src="https://app.cashiers.com.br{{ Auth::user()->profile_photo_url }}">
+
+                <script>
+
+                    window.addEventListener("load", event => {
+                    var image = document.querySelector('#mbl-global-user-img');
+                    var isLoaded = image.complete && image.naturalHeight !== 0;
+
+                    if(isLoaded == false){
+                        image.src = "{{asset('vendor/adminlte/dist/img/global-user.png')}}";
+                    }
+
+                    });
+
+                </script>
 
             </div>
 
