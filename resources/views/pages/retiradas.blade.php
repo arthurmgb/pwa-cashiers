@@ -7,12 +7,6 @@
 
 @section('content')
 
-    <div @if(auth()->user()->table_scroll == 1) style="overflow-x: hidden;" @endif class="uk-container">
-
-        @livewire('retirada')
-
-    </div>
-
     <div class="content-mbl">
 
         @livewire('retirada')

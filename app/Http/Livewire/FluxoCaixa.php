@@ -16,7 +16,7 @@ class FluxoCaixa extends Component
 
     public $option;
 
-    public $receita = null;
+    public $receita;
 
     public $qtd = 10;
 
@@ -30,6 +30,7 @@ class FluxoCaixa extends Component
     public function mount()
     {
         $this->option = [1, 0];
+        $this->receita = null;
     }
 
     public function updatingSearch()
@@ -40,9 +41,14 @@ class FluxoCaixa extends Component
     public function geraReceita()
     {
         if ($this->receita == null) {
+
             $this->receita = true;
-        } else {
+
+        } 
+        else {
+
             $this->receita = null;
+
         }
     }
 

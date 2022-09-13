@@ -1,201 +1,269 @@
 <div>
-    <div class="desktop-context">
-    
-        <div class="page-header d-flex flex-row align-items-center">
-            <h2 class="f-h2">Fluxo de caixa</h2>
-            <span class="f-span">{{ $operations_count }} operações</span>
+
+    <div class="mbl-context">
+
+        <div class="mbl-div-create-op">
+            <button data-toggle="modal" data-target="#operacao" class="btn mbl-btn-create-op">
+                +
+            </button>
         </div>
-        <div class="page-filters">
 
-            <a wire:click.prevent="changeOption([1,0])" wire:loading.attr="disabled"
-                class="filter-base filter-ops @if ($option==[1, 0]) filter-10 @endif">
-                <span>Todas as operações</span>
-            </a>
-            <a wire:click.prevent="changeOption([1])" wire:loading.attr="disabled"
-                class="filter-base filter-entrada @if ($option==[1]) filter-1 @endif">
-                <span>Operações de entrada</span>
-            </a>
-            <a wire:click.prevent="changeOption([0])" wire:loading.attr="disabled"
-                class="filter-base filter-saida @if ($option==[0]) filter-0 @endif">
-                <span>Operações de saída</span>
-            </a>
-            <a wire:click.prevent="geraReceita()" wire:loading.attr="disabled" class="filter-base filter-soma @if ($receita==true) filter-s @endif">
-                <span>Gerar <br> receita</span>
-            </a>
+        <div class="col-12">
 
-            <a data-toggle="modal" data-target="#operacao" class="btn btn-new float-right">+ Nova operação</a>
+            <div class="d-flex flex-row flex-wrap align-items-center justify-content-start">
+                <h2 class="mbl-title-h2">Fluxo de caixa</h2>
+                <span class="mbl-f-span align-self-end">
+                    {{ $operations_count }} operações
+                </span>
+            </div>
 
-        </div>
-        <div class="block">
+            <div class="d-flex flex-row flex-wrap align-items-center justify-content-between mb-2">
 
-            <div class="card">
+                <a wire:click.prevent="changeOption([1,0])" wire:loading.attr="disabled"
+                class="flex-fill mbl-filter-base mbl-filter-ops @if ($option==[1, 0]) filter-10 @endif">
+                    <span>Todas <br> as operações</span>
+                </a>
 
-                <div class="card-topo mb-3">
-                    <input wire:model="search" placeholder="buscar operação" class="search-input" autocomplete="off">
-                    <i class="fa fa-search"></i>
-                </div>
+                <a wire:click.prevent="changeOption([1])" wire:loading.attr="disabled"
+                    class="flex-fill mbl-filter-base mbl-filter-entrada @if ($option==[1]) filter-1 @endif">
+                    <span>Operações de <br> entrada</span>
+                </a>
 
-                <div style="margin-top: 125px; margin-bottom: 125px;" wire:loading
-                    wire:loading.class="d-flex flex-row align-items-center justify-content-center">
-                    <i style="color: #725BC2; opacity: 90%;" class="fad fa-spinner-third fa-fw fa-3x fa-spin"></i>
-                </div>
+                <a wire:click.prevent="changeOption([0])" wire:loading.attr="disabled"
+                    class="flex-fill mbl-filter-base mbl-filter-saida @if ($option==[0]) filter-0 @endif">
+                    <span>Operações de <br> saída</span>
+                </a>
 
-                <div wire:loading.remove class="card-body px-0 pb-0 pt-1 @if ($receita) pt-1 @endif @if(auth()->user()->table_scroll == 1) table-responsive yampay-scroll-lg @endif">
+                <a wire:click.prevent="geraReceita()" wire:loading.attr="disabled" class="flex-fill mbl-filter-base mbl-filter-soma @if($receita == true) filter-s @endif">
+                    <span>Gerar <br> receita</span>
+                </a>
+
+            </div>
+
+            <div class="d-flex flex-row align-items-center justify-content-center">
+
+                <div class="mbl-card mb-2">
+                    
+                    <div class="mbl-title-block">
+                        Operações realizadas                 
+                    </div>
+
+                    <div class="card-topo my-3">
+                        <input wire:model="search" placeholder="buscar operação" class="search-input mbl-search-input" autocomplete="off">
+                        <i class="fa fa-search"></i>
+                    </div>
+
+                    <div style="margin-top: 50px; margin-bottom: 50px;" wire:loading wire:loading.class="d-flex flex-row align-items-center justify-content-center">
+                        <i style="color: #725BC2; opacity: 90%;" class="fad fa-spinner-third fa-fw fa-3x fa-spin"></i>
+                    </div>
+
+                    {{-- OPERAÇÕES --}}
+
+                    <div id="mobile-operations-vg" wire:loading.remove>
 
                     @if ($operations->count())
 
-                        @if ($receita and $search != true)
+                        @if($receita and $search != true)
 
-                            <div class="receita-alert d-flex flex-row align-items-center">
-                                <span>Receita: <b>R$ @if ($option == [0]) -@endif{{ $receita_valor }}</b> / Total de operações:
-                                    {{ $operations_find }} / Operações na página: {{ $operations->count() }}</span>
-                                <a class="limpar-filtro" wire:click.prevent="geraReceita()" href="#">Limpar filtro</a>
-                                @if ($option == [1, 0])
-                                <span class="ml-auto mt-1" data-tooltip="O total das retiradas não é considerado no fluxo de caixa, portanto a receita aqui calculada não corresponde ao seu saldo real." data-flow="left">    
-                                    <i class="fa-fw fad fa-info-circle fa-lg info-ret"></i>
-                                </span> 
-                                @endif
+                            <div class="receita-alert d-flex flex-column align-items-start mb-3">
+
+                                <span>
+                                    Receita: <b>R$ @if ($option == [0]) -@endif{{ $receita_valor }}</b> 
+                                    <br>
+                                    Total de operações: {{ $operations_find }} 
+                                    <br>
+                                    Operações na página: {{ $operations->count() }}
+                                </span>
+
+                                <a class="mbl-limpar-filtro mt-3 ml-auto" wire:click.prevent="geraReceita()" href="#">
+                                    Limpar filtro
+                                </a>
+
                             </div>
 
                         @endif
+                    
+                        <div class="accordion" id="accordionOperations">
 
-                        <div class="div-opt-table my-2">
-                            <a class="home-link my-0" href="{{route('configuracoes')}}">
-                                <i class="fal fa-cog mr-1"></i>Opções de tabela
-                            </a>
-                        </div> 
+                            @php
+                                $dia_atual = Carbon\Carbon::now();
+                            @endphp
 
-                        <table style="cursor: default;" class="table table-borderless mb-2">
-                            <thead class="t-head">
-                                <tr class="t-head-border">
-                                    <th>Cód.</th>
-                                    <th style="min-width: 220px;">Descrição</th>
-                                    <th>Data</th>
-                                    <th>Total</th>
-                                    <th width="200px">Categoria</th>
-                                    <th>Espécie</th>
-                                    <th width="100px">
-                                        <div class="d-flex flex-row align-items-center fp-infos">
-                                        FP <i wire:ignore data-toggle="tooltip" data-html="true" data-placement="top" title='<b><em>Forma de pagamento</em></b> <br> Se selecionado o tipo de <b>Espécie</b> como <b>Outros</b>, você pode definir uma forma de pagamento no cadastro da operação.</span>' style="margin-top: 2px;" class="fad fa-info-circle fa-fw ml-1 fa-lg fp-info-ico"></i>
-                                        </div>
-                                    </th>
-                                    <th width="100px">Operador</th>
-                                    <th width="200px">Operação</th>
-                                </tr>
-                            </thead>
-                            <tbody class="t-body">
+                            @foreach ($operations as $operation)
 
-                                @php
-                                    $dia_atual = Carbon\Carbon::now();
-                                @endphp
-
-                                @foreach ($operations as $operation)
-
-                                    @php
-                                        
-                                        $total_operacao = number_format($operation->total, 2, ',', '.');
-                                        $data_operacao = $operation->created_at->format('d/m/Y H:i');
-                                        
-                                        $date1 = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $dia_atual);
-                                        $date2 = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $operation->created_at);
-                                        
-                                        $diferenca = $date2->diffInDays($date1);
-                                        $tempo = 'dias';
-                                        
+                            @php
+                                                        
+                                $total_operacao = number_format($operation->total, 2, ',', '.');
+                                $data_operacao = $operation->created_at->format('d/m/Y H:i');
+                                
+                                $date1 = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $dia_atual);
+                                $date2 = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $operation->created_at);
+                                
+                                $diferenca = $date2->diffInDays($date1);
+                                $tempo = 'dias';
+                                
+                                if ($diferenca === 1) {
+                                    $diferenca = 'um';
+                                    $tempo = 'dia';
+                                }
+                                
+                                if ($diferenca === 0) {
+                                    $diferenca = $date2->diffInHours($date1);
+                                    $tempo = 'horas';
+                                
+                                    if ($diferenca === 1) {
+                                        $diferenca = 'uma';
+                                        $tempo = 'hora';
+                                    }
+                                
+                                    if ($diferenca === 0) {
+                                        $diferenca = $date2->diffInMinutes($date1);
+                                        $tempo = 'minutos';
+                                
                                         if ($diferenca === 1) {
                                             $diferenca = 'um';
-                                            $tempo = 'dia';
+                                            $tempo = 'minuto';
                                         }
-                                        
+                                
                                         if ($diferenca === 0) {
-                                            $diferenca = $date2->diffInHours($date1);
-                                            $tempo = 'horas';
-
-                                            if ($diferenca === 1) {
-                                                $diferenca = 'uma';
-                                                $tempo = 'hora';
-                                            }
-                                        
-                                            if ($diferenca === 0) {
-                                                $diferenca = $date2->diffInMinutes($date1);
-                                                $tempo = 'minutos';
-                                        
-                                                if ($diferenca === 1) {
-                                                    $diferenca = 'um';
-                                                    $tempo = 'minuto';
-                                                }
-                                        
-                                                if ($diferenca === 0) {
-                                                    $diferenca = 'poucos';
-                                                    $tempo = 'segundos';
-                                                }
-                                            }
+                                            $diferenca = 'poucos';
+                                            $tempo = 'segundos';
                                         }
+                                    }
+                                }
+                                
+                                if (is_null($operation->category)) {
+                                    $categoria_op = 'Retirada';
+                                } else {
+                                    $categoria_op = $operation->category->descricao;
+                                }
 
-                                        if ($operation->especie === 1 ) {
-                                            $especie_op = 'Dinheiro';
-                                        }elseif($operation->especie === 2){
-                                            $especie_op = 'Cheque';
-                                        }elseif($operation->especie === 3) {
-                                            $especie_op = 'Moedas';                                             
-                                        }elseif($operation->especie === 4) {
-                                            $especie_op = 'Outros';
-                                        }
-                                        
-                                    @endphp
+                                if ($operation->especie === 1 ) {
+                                    $especie_op = 'Dinheiro';
+                                }elseif($operation->especie === 2){
+                                    $especie_op = 'Cheque';
+                                }elseif($operation->especie === 3) {
+                                    $especie_op = 'Moedas';                                             
+                                }elseif($operation->especie === 4) {
+                                    $especie_op = 'Outros';
+                                }
+                            
+                            @endphp
 
-                                    <tr class="tr-hover">
+                            <div class="card mbl-op-item">
 
-                                        <td class="align-middle">
-                                            <div style="cursor: pointer;" data-tooltip="{{$operation->id}}" data-flow="right" class="div-codigo">
-                                                <i class="fad fa-info-circle fa-fw fa-lg icon-info-cod"></i>
-                                            </div>                                                
-                                        </td>
-                                        <td style="@if(auth()->user()->table_scroll == 1) word-wrap: break-word @elseif(auth()->user()->table_scroll == 0) word-break: break-all @endif" class="align-middle font-desc">{{ $operation->descricao }}</td>
-                                        <td style="white-space: nowrap;" class="align-middle">{{ $data_operacao }}<br><span class="g-light">há
-                                                {{ $diferenca }} {{ $tempo }}</span></td>
-                                        <td style="white-space: nowrap; font-weight: 500;" class="align-middle">R$ {{ $total_operacao }}</td>
-                                        <td style="@if(auth()->user()->table_scroll == 1) word-wrap: break-word @elseif(auth()->user()->table_scroll == 0) word-break: break-all @endif" class="align-middle">
-                                            <span class="categoria">{{ $operation->category->descricao }}</span></td>
-                                        <td class="align-middle">
-                                            <span
-                                                class="especie">{{ $especie_op }}
-                                            </span>
-                                        </td>
-                                        <td style="word-wrap: break-word;" class="align-middle">
-                                            <span>
-                                                @if (is_null($operation->method_id))
-                                                    @if ($operation->especie == 4)
-                                                        <span style="color: #725BC2; font-weight: 500;">Não especificada</span> 
-                                                    @else
-                                                        {{$especie_op}}
-                                                    @endif
-                                                @else
-                                                    {{ $operation->method->descricao }}
-                                                @endif
-                                            </span>
-                                        </td>
-                                        <td style="word-wrap: break-word;" class="align-middle">{{ $operation->operator->nome ?? auth()->user()->name}}</td>
-                                        @if ($operation->tipo == 1)
-                                            <td class="align-middle"><span style="white-space: nowrap;" class="operacao-entrada">Movimento de
-                                                    entrada</span></td>
+                                <div class="card-header mbl-op-item-header" id="heading{{$operation->id}}">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-block text-left mbl-op-item-btn" type="button" data-toggle="collapse" data-target="#collapse{{$operation->id}}" aria-expanded="false" aria-controls="collapse{{$operation->id}}">
+                                    <i class="fad fa-chevron-down fa-fw mr-2"></i>
+                                    {{$operation->descricao}}
+                                    </button>
+                                </h2>
+                                </div>
+                            
+                                <div wire:ignore.self id="collapse{{$operation->id}}" class="collapse" aria-labelledby="heading{{$operation->id}}" data-parent="#accordionOperations">
+                                <div class="card-body d-flex flex-column align-items-start justify-content-start mbl-details-op">
+                                    <span class="mbl-span-item">
+                                        @if($operation->tipo == 1)
+                                            <div class="mb-2">
+                                                <span style="background: #00a3a3;" class="mbl-operacao-label">
+                                                    Movimento de entrada
+                                                </span>
+                                            </div>
+                                        @elseif($operation->tipo == 3)
+                                            <div class="mb-2">
+                                                <span style="background: #0696BD;" class="mbl-operacao-label">
+                                                    Retirada de caixa
+                                                </span>
+                                            </div>
                                         @else
-                                            <td class="align-middle"><span style="white-space: nowrap;" class="operacao-saida">Movimento de saída</span>
-                                            </td>
+                                            <div class="mb-2">
+                                                <span style="background: #E6274C;" class="mbl-operacao-label">
+                                                    Movimento de saída
+                                                </span>
+                                            </div>
                                         @endif
+                                    </span>
 
-                                    </tr>
+                                    <span class="mbl-span-item">
+                                        Código: 
+                                        <span class="mbl-variable-op-item">
+                                            {{$operation->id}}
+                                        </span> 
+                                    </span>
 
-                                @endforeach
+                                    <span class="mbl-span-item">
+                                        Total: 
+                                        <span class="mbl-variable-op-item mbl-total-format">
+                                        R$ {{$total_operacao}}
+                                        </span>
+                                    </span>
 
-                            </tbody>
-                        </table>
+                                    <span class="mbl-span-item">
+                                        Data: 
+                                        <span class="mbl-variable-op-item ">
+                                        {{$data_operacao}}
+                                        </span>
+                                    </span>
+
+                                    <span class="mbl-span-item">
+                                        Categoria: 
+                                        <span class="mbl-variable-op-item-purple">
+                                        {{$categoria_op}}
+                                        </span>
+                                    </span>
+
+                                    <span class="mbl-span-item">
+                                        Espécie: 
+                                        <span class="mbl-variable-op-item-purple">
+                                        {{$especie_op}}
+                                        </span>
+                                    </span>
+
+                                    <span class="mbl-span-item">
+
+                                        @if (is_null($operation->method_id))
+                                            @if ($operation->especie == 4)
+                                            Forma de pagamento: 
+                                            <span class="mbl-variable-op-item">
+                                            Não especificada
+                                            </span>
+                                            @else
+                                            Forma de pagamento: 
+                                            <span class="mbl-variable-op-item-purple">
+                                            {{$especie_op}}
+                                            </span>
+                                            @endif
+                                        @else
+                                            Forma de pagamento: 
+                                            <span class="mbl-variable-op-item-purple">
+                                            {{ $operation->method->descricao }}
+                                            </span>
+                                        @endif
+                                        
+                                    </span>
+
+                                    <span class="mbl-span-item">
+                                        Operador: 
+                                        <span class="mbl-variable-op-item-purple">
+                                        {{ $operation->operator->nome ?? auth()->user()->name}}
+                                        </span>
+                                    </span>
+
+                                </div>
+                                </div>
+    
+                            </div>
+
+                            @endforeach
+
+                        </div>
 
                     @else
 
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="211"
-                                height="145">
+                        <div class="d-flex flex-column align-items-center justify-content-center mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="211" height="145">
                                 <style>
                                     <![CDATA[
                                     .B {
@@ -240,8 +308,10 @@
                                     <path fill-opacity=".5" fill="#c2cbd2"
                                         d="M1 86.62l42.558-4.92v62.122l-40.465-7.31-.3-37.35L1 98.633z" />
                                     <g class="D E H">
-                                        <path d="M3.093 136.513l-.3-37.35 40.775 5.6 40.775-5.6-.3 37.35-40.465 7.607z" />
-                                        <path d="M1 98.633V86.41l42.558 5.088 42.558-5.088v12.224l-42.558 6.12z" />
+                                        <path
+                                            d="M3.093 136.513l-.3-37.35 40.775 5.6 40.775-5.6-.3 37.35-40.465 7.607z" />
+                                        <path
+                                            d="M1 98.633V86.41l42.558 5.088 42.558-5.088v12.224l-42.558 6.12z" />
                                     </g>
                                     <path fill-opacity=".5"
                                         d="M83.508 113.56v-13.6l-34.92 4.804zm1.9-26.454l-41.18 5.1.1 11.74 41.08-5.85z"
@@ -256,7 +326,8 @@
                                                 d="M141.144 29.827L89.04 29.01c-3.54-.056-6.93 1.425-9.295 4.06l-2.888 3.216c-.724.806-1.365 1.684-1.912 2.62-1.976 3.378-2.985 5.908-3.04 7.53-.703 20.954-.858 36.17-.467 45.636.178 4.308.765 8.13 1.76 11.47a16.05 16.05 0 0 0 15.38 11.469h59.993a16.05 16.05 0 0 0 16.046-16.046v-49.83c0-6.943-4.466-13.1-11.066-15.254l-12.41-4.05z" />
                                         </g>
                                     </g>
-                                    <rect x="70.332" y="28.22" width="81.73" height="81.882" rx="21.767" class="B F" />
+                                    <rect x="70.332" y="28.22" width="81.73" height="81.882" rx="21.767"
+                                        class="B F" />
                                     <g class="D E B F">
                                         <rect x="71.03" y="28.917" width="80.334" height="80.487" rx="16.744" />
                                         <g class="C G">
@@ -284,7 +355,8 @@
                                             <path
                                                 d="M161.104 130.992c3.01 0 5.462 2.38 5.577 5.362l.003.218h-11.162c.001-3.01 2.382-5.46 5.362-5.576l.22-.004z" />
                                         </g>
-                                        <ellipse fill="#a4afb7" cx="108.789" cy="83.823" rx="5.233" ry="6.977" />
+                                        <ellipse fill="#a4afb7" cx="108.789" cy="83.823" rx="5.233"
+                                            ry="6.977" />
                                         <g class="B">
                                             <path
                                                 d="M108.8 81.023c2.9 0 4.255-.993 4.06-1.342-.96-1.73-2.422-2.834-4.06-2.834-1.594 0-3.022 1.046-3.982 2.695-.155.267 1.092 1.48 3.982 1.48z" />
@@ -319,29 +391,26 @@
                                         d="M123.276 112.706l.55 18.708h-1.3c-1.432 0-2.593 1.16-2.593 2.593s1.16 2.593 2.593 2.593h4.065a3.49 3.49 0 0 0 3.49-3.49c0-.594-1.432-9.597-1.126-20.405" />
                                 </defs>
                             </svg>
-                            <h3 class="my-4 no-results">Não há operações a serem exibidas.</h3>
-                            <div class="d-flex flex-column align-items-center justify-content-center mb-4">
-                                <h3 class="no-results-create mb-3">Comece criando uma</h3>
-                                <a data-toggle="modal" data-target="#operacao" class="ml-2 btn btn-nr">+ Nova operação</a>
-                            </div>
+                            <h3 class="mt-4 mbl-no-results text-center">
+                                Não há operações a serem exibidas.
+                            </h3>
                         </div>
 
                     @endif
+
+                    </div>
+
+                    {{-- END OPERAÇÕES --}}
+
                 </div>
-                @if(auth()->user()->table_scroll == 1)
-                <div wire:ignore style="width: fit-content; cursor: pointer; user-select: none;" class="tip-scroll mt-3" data-toggle="tooltip" data-html="true" data-placement="right" title="Pressione <b>SHIFT</b> + <b>Scroll do Mouse</b> em cima da tabela para visualizar todo o conteúdo. Ou se preferir, segure e arraste a barra de rolagem.">
-                    <span class="info-total-cx">
-                        <i class="fa-fw fad fa-info-circle fa-lg info-ret" aria-hidden="true"></i>
-                    </span>
-                    <span style="font-size: 15px !important; color: #666; text-transform: uppercase; font-weight: 600;">Dica</span>
-                </div>
-                @endif
+
             </div>
 
-            <div style="user-select: none; padding-bottom: 150px;"
-                class="d-flex flex-row align-items-center justify-content-between">
+            {{-- PAGINATION --}}
 
-                <div class="resultados d-flex flex-row align-items-center">
+            <div style="user-select: none; padding-bottom: 100px;" class="d-flex flex-column align-items-center justify-content-center">
+
+                <div class="resultados d-flex flex-row align-items-center my-2">
                     <select wire:model="qtd" class="form-control modal-input-cat rpp">
                         <option value="10">10</option>
                         <option value="20">20</option>
@@ -352,20 +421,19 @@
                 </div>
 
                 @if ($operations->hasPages())
-                    <div class="paginacao">
+                
+                    <div class="paginacao my-2">
                         {{ $operations->links() }}
                     </div>
 
                 @endif
+
             </div>
 
+            {{-- END PAGINATION --}}
 
         </div>
-
-    </div>
-
-    <div class="mbl-context">
-        <h1>Fluxo de caixa</h1>
+        
     </div>
 
 </div>

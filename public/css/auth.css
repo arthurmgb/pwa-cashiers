@@ -6,11 +6,9 @@
     background: #725BC2 !important;
 }
 .primezze-card{
-    padding: 50px 60px !important;
-    margin: 40px 0 !important;
+    padding: 40px 30px !important;
     background: #fff !important;
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,.1) !important;
-    border-radius: 10px !important;
+    margin: 0px !important;
 }
 .primezze-header{
     margin: auto !important;

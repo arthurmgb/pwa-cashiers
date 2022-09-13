@@ -13,30 +13,30 @@
                 <div class="modal-body py-4 px-4">
 
                     <form wire:submit.prevent="confirmation()">
-                        <div class="form-group mb-1">
-                            <label class="modal-label">Tipo de categoria <span class="red">*</span></label>
+                        <div class="form-group mb-1 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                            <label class="modal-label mr-auto">Tipo de categoria <span class="red">*</span></label>
                             <br>
                             <input wire:model.defer="state.tipo" value="1" class="radio" type="radio" name="tipo-cat"
                                 id="cat-entrada">
-                            <label class="label-op" for="cat-entrada"><i class="fad fa-arrow-to-top fa-fw fa-lg mr-1"></i>Entrada</label>
+                            <label class="label-op flex-fill" for="cat-entrada"><i class="fad fa-arrow-to-top fa-fw fa-lg mr-1"></i>Entrada</label>
 
                             <input wire:model.defer="state.tipo" value="0" class="radio" type="radio" name="tipo-cat"
                                 id="cat-saida">
-                            <label class="label-op" for="cat-saida">Saída<i class="fad fa-arrow-from-top fa-fw fa-lg ml-1"></i></label>
+                            <label class="label-op flex-fill" for="cat-saida">Saída<i class="fad fa-arrow-from-top fa-fw fa-lg ml-1"></i></label>
                             @error('state.tipo')
                                 <span class="wire-error">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="form-group mb-1">
-                            <label class="modal-label">Status da categoria <span class="red">*</span></label>
+                        <div class="form-group mb-1 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                            <label class="modal-label mr-auto">Status da categoria <span class="red">*</span></label>
                             <br>
                             <input wire:model.defer="state.status" value="1" class="radio" type="radio" name="status-cat"
                                 id="status-ativa">
-                            <label class="label-op" for="status-ativa"><i class="fad fa-chevron-circle-up fa-fw fa-lg mr-1"></i>Ativa</label>
+                            <label class="label-op flex-fill" for="status-ativa"><i class="fad fa-chevron-circle-up fa-fw fa-lg mr-1"></i>Ativa</label>
 
                             <input wire:model.defer="state.status" value="0" class="radio" type="radio" name="status-cat"
                                 id="status-inativa">
-                            <label class="label-op" for="status-inativa">Inativa<i class="far fa-chevron-circle-down fa-fw fa-lg ml-1"></i></label>
+                            <label class="label-op flex-fill" for="status-inativa">Inativa<i class="far fa-chevron-circle-down fa-fw fa-lg ml-1"></i></label>
                             @error('state.status')
                                 <span class="wire-error">{{ $message }}</span>
                             @enderror
@@ -50,10 +50,16 @@
                             @enderror
                         </div>
                 </div>
-                <div class="modal-footer py-4">
-                    <button wire:loading.attr="disabled" type="button" class="btn btn-cancel"
-                        wire:click.prevent="resetNewOperation()">Cancelar</button>
-                    <button wire:loading.attr="disabled" type="submit" class="btn btn-send">Cadastrar</button>
+                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+
+                    <button wire:loading.attr="disabled" type="button" class="btn btn-cancel flex-fill order-2" wire:click.prevent="resetNewOperation()">
+                        Cancelar
+                    </button>
+
+                    <button wire:loading.attr="disabled" type="submit" class="btn btn-send flex-fill order-1">
+                        Cadastrar
+                    </button>
+
                     </form>
                 </div>
             </div>
@@ -72,7 +78,7 @@
                         <i class="far fa-arrow-left"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-4">
+                <div class="modal-body py-4 px-2">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente cadastrar esta
                         categoria?</h5>
@@ -86,11 +92,16 @@
                     </div>
 
                 </div>
-                <div class="modal-footer py-4">
-                    <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button"
-                        class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-                    <button wire:loading.attr="disabled" wire:click.prevent="save()" type="button"
-                        class="btn btn-send">Confirmar</button>
+                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+
+                    <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button" class="btn btn-cancel flex-fill order-2" data-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button wire:loading.attr="disabled" wire:click.prevent="save()" type="button" class="btn btn-send flex-fill order-1">
+                        Confirmar
+                    </button>
+
                     </form>
                 </div>
             </div>

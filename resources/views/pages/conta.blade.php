@@ -1,20 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Formas de pagamento')
+@section('title', 'Minha conta')
 
 @section('content_header')
 @stop
 
 @section('content')
 
-    <div class="content-mbl">
+    <div class="content-mobile">
 
-        @livewire('forma-pagamento')
+        @livewire('conta')
         
     </div>
     
-    @livewire('create-method')
-
 @stop
 
 @section('css')

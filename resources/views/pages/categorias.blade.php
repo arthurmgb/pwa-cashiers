@@ -7,14 +7,10 @@
 
 @section('content')
 
-    <div class="uk-container">
+    <div class="content-mbl">
 
         @livewire('categoria')
-
-    </div>
-
-    <div class="content-mobile">
-        @livewire('categoria')
+        
     </div>
 
     @livewire('create-cat')

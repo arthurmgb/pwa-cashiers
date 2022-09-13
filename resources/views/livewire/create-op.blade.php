@@ -23,16 +23,26 @@
                         </div>
                     </div>
                     <form wire:submit.prevent="confirmation()">
-                        <div class="form-group mb-1">
-                            <label class="modal-label">Tipo de operação <span class="red">*</span></label>
-                            <br>
+                        <div class="form-group mb-1 d-flex flex-row flex-wrap align-items-center justify-content-center">
+
+                            <label class="modal-label mr-auto">
+                                Tipo de operação <span class="red">*</span>
+                            </label>
+
                             <input wire:model="state.tipo" wire:click="changeOperation" value="1" class="radio" type="radio" name="operation"
                                 id="op-entrada">
-                            <label class="label-op" for="op-entrada"><i class="fad fa-arrow-to-top fa-fw fa-lg mr-1"></i>Entrada</label>
+                            <label class="label-op flex-fill" for="op-entrada">
+                                <i class="fad fa-arrow-to-top fa-fw fa-lg mr-1"></i>
+                                Entrada
+                            </label>
 
                             <input wire:model="state.tipo" wire:click="changeOperation" value="0" class="radio" type="radio" name="operation"
                                 id="op-saida">
-                            <label class="label-op" for="op-saida">Saída<i class="fad fa-arrow-from-top fa-fw fa-lg ml-1"></i></label>
+                            <label class="label-op flex-fill" for="op-saida">
+                                Saída
+                                <i class="fad fa-arrow-from-top fa-fw fa-lg ml-1"></i>
+                            </label>
+
                             @error('state.tipo')
                                 <span class="wire-error">{{ $message }}</span>
                             @enderror
@@ -48,7 +58,7 @@
                         <div class="form-group">
                             <label class="modal-label" for="categoria-op">Categoria <span class="red">*</span></label>
                             @if ($categorias->count())
-                            <a style="padding: 3px 14px;" href="{{ route('categorias') }}" target="_blank" class="btn btn-new my-1 float-right">+ Nova</a>
+                            <a style="padding: 3px 14px;" href="{{ route('categorias') }}" class="btn btn-new my-1 float-right">+ Nova</a>
 
                                 <select style="font-size: 17px;" wire:model.defer="state.categoria" class="form-control modal-input-cat yampay-scroll"
                                     id="categoria-op" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
@@ -59,7 +69,7 @@
                                     @endforeach
                                 </select>
                             @else
-                            <a href="{{ route('categorias') }}" target="_blank" class="btn btn-new btn-block">+ Nova categoria</a>
+                            <a href="{{ route('categorias') }}" class="btn btn-new btn-block">+ Nova categoria</a>
                             @endif
                             @error('state.categoria')
                                 <span class="wire-error">{{ $message }}</span>
@@ -68,7 +78,7 @@
                         <div class="form-group">
                             <label class="modal-label" for="operador-op">Operador <span class="red">*</span></label>
                             @if ($operadores->count())
-                            <a style="padding: 3px 14px;" href="{{ route('configuracoes') }}" target="_blank" class="btn btn-new my-1 float-right">+ Novo</a>
+                            <a style="padding: 3px 14px;" href="{{ route('configuracoes') }}" class="btn btn-new my-1 float-right">+ Novo</a>
 
                                 <select style="font-size: 17px;" wire:model.defer="state.operador" class="form-control modal-input-cat yampay-scroll"
                                     id="operador-op" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();' @if($is_operator_default == 'disabled') disabled @endif>
@@ -79,7 +89,7 @@
                                     @endforeach
                                 </select>
                             @else
-                            <a href="{{ route('configuracoes') }}" target="_blank" class="btn btn-new btn-block">+ Novo operador</a>
+                            <a href="{{ route('configuracoes') }}" class="btn btn-new btn-block">+ Novo operador</a>
                             @endif
                             @error('state.operador')
                                 <span class="wire-error">{{ $message }}</span>
@@ -103,7 +113,7 @@
                         @if (isset($state['especie']) and $state['especie'] == 4)
                             <div class="form-group">
                                 <label class="modal-label" for="fp-op">Forma de pagamento  <span style="font-size: 12px;">(opcional)</span></label>
-                                <a style="padding: 3px 14px;" href="{{ route('formas-pagamento') }}" target="_blank" class="btn btn-new my-1 float-right">+ Nova FP</a>
+                                <a style="padding: 3px 14px;" href="{{ route('formas-pagamento') }}" class="btn btn-new my-1 float-right">+ Nova</a>
                                     <select style="font-size: 17px;" wire:model.defer="state.fp" class="form-control modal-input-cat yampay-scroll"
                                     id="fp-op" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                                     <option value="">Não especificada</option>
@@ -133,10 +143,16 @@
                         </div>
 
                 </div>
-                <div class="modal-footer py-4">
-                    <button wire:loading.attr="disabled" type="button" class="btn btn-cancel"
-                        wire:click.prevent="resetNewOperation()" data-dismiss="modal">Cancelar</button>
-                    <button wire:loading.attr="disabled" wire:target="confirmation" type="submit" class="btn btn-send">Adicionar</button>
+                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+
+                    <button wire:loading.attr="disabled" type="button" class="btn btn-cancel flex-fill order-2" wire:click.prevent="resetNewOperation()" data-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button wire:loading.attr="disabled" wire:target="confirmation" type="submit" class="btn btn-send flex-fill order-1">
+                        Adicionar
+                    </button>
+
                     </form>
                 </div>
             </div>
@@ -149,7 +165,7 @@
         <div class="modal-dialog">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
-                    <h5 class="modal-title px-3 py-3" id="confirm-operationLabel">Confirmação da operação</h5>
+                    <h5 class="modal-title px-3 py-3" id="confirm-operationLabel">Confirmação <br> da operação</h5>
                     <button wire:loading.attr="disabled" type="button" class="close px-4" data-dismiss="modal"
                         aria-label="Close" wire:click.prevent="alternate()">
                         <i class="far fa-arrow-left"></i>
@@ -170,11 +186,16 @@
                     </div>
 
                 </div>
-                <div class="modal-footer py-4">
-                    <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button"
-                        class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-                    <button wire:loading.attr="disabled" wire:click.prevent="save()" type="button"
-                        class="btn btn-send">Confirmar</button>
+                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+
+                    <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button" class="btn btn-cancel flex-fill order-2" data-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button wire:loading.attr="disabled" wire:click.prevent="save()" type="button" class="btn btn-send flex-fill order-1">
+                        Confirmar
+                    </button>
+
                     </form>
                 </div>
             </div>

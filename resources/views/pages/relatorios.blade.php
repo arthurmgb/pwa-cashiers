@@ -7,20 +7,17 @@
 
 @section('content')
 
-    <div style="max-width: 1600px !important;" class="uk-container">
-
-        @livewire('relatorio')
-
-    </div>
-
     <div class="content-mbl">
+
         @livewire('relatorio')
+
     </div>
 
 @stop
 
 @section('css')
     <link rel="stylesheet" href="{{asset('vendor\adminlte\dist\css\preloader.css')}}">
+    
     <style>
         @media print {
     
@@ -46,15 +43,18 @@
 
         }
     </style>
+
 @stop
 
 @section('js')
     <script src="{{asset('js/newfont.js')}}"></script>
+    
     <script>
         window.addEventListener('call-print', event =>{
             window.print();
         })
     </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             $(function () {
@@ -68,4 +68,5 @@
             })
         });
     </script>
+    
 @stop

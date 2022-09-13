@@ -180,63 +180,102 @@
 
         @if(auth()->user()->is_blocked == 0)
 
-            <div class="wrapper">
-
-                <div id="preloader">
-                    <div class="inner">
-                        <img style="width: 64px; height: 64px; margin-bottom: 20px; margin-left: 10px;" src="{{ asset('vendor/adminlte/dist/img/cashier-logo.png') }}">
-                        <div class="bolas">
-                            <div></div>
-                            <div></div>
-                            <div></div>                    
-                        </div>
-                    </div>
+        <div id="preloader">
+            <div class="inner">
+                <img style="width: 64px; height: 64px; margin-bottom: 20px; margin-left: 10px;" src="{{asset('vendor/adminlte/dist/img/cashier-logo.png')}}">
+                <div class="bolas">
+                    <div></div>
+                    <div></div>
+                    <div></div>                    
                 </div>
+            </div>
+        </div>
 
-                {{-- Top Navbar --}}
-                @if($layoutHelper->isLayoutTopnavEnabled())
-                    @include('adminlte::partials.navbar.navbar-layout-topnav')
-                @else
-                    @include('adminlte::partials.navbar.navbar')
-                @endif
+        <div class="mobile">
 
-                {{-- Left Main Sidebar --}}
-                @if(!$layoutHelper->isLayoutTopnavEnabled())
-                    @include('adminlte::partials.sidebar.left-sidebar')
-                @endif
+            <div class="mbl-top-nav border-bottom">
 
-                {{-- Content Wrapper --}}
-                <div style="background-color: #f3f4f6;" class="content-wrapper {{ config('adminlte.classes_content_wrapper') ?? '' }}">
+                <a href="http://127.0.0.1:8000" class="mobile-brand-logo">
 
-                    {{-- Content Header --}}
-                    @hasSection('content_header')
-                        <div class="content-header">
-                            <div class="{{ config('adminlte.classes_content_header') ?: $def_container_class }}">
-                                @yield('content_header')
-                            </div>
-                        </div>
-                    @endif
+    
+                    <img style="margin-top: 0px; width: 32px; height: 32px; max-height: 32px;" src="http://127.0.0.1:8000/vendor/adminlte/dist/img/cashier-logo.png" class="brand-image mr-2">
+                    
+                    
+                    <span style="font-size: 24px !important;" class="brand-text font-weight-light ">
+                        <span class="text-uppercase" style="color: #352B73; font-weight: 600; letter-spacing: 1px;">
+                            Ca<span style="color: #f472b6;">$</span>hiers
+                        </span>
+                    </span>
+                
+                </a>
+                
+            </div>
+            
+            @yield('content')
 
-                    {{-- Main Content --}}
-                    <div class="content">
-                        <div class="{{ config('adminlte.classes_content') ?: $def_container_class }}">
-                                @yield('content')
-                        </div>
+            <div class="mbl-bottom-nav">
+
+                <?php 
+                  $route_name = Route::currentRouteName();    
+                ?>
+                
+                <a id="home-item" href="{{route('home').'#home-item'}}">
+                    <div style="margin-left: 10px;" class="mbl-menu-item @if($route_name == 'home') active-route @endif">
+                        <i class="far fa-home-alt fa-lg fa-fw"></i>
                     </div>
+                </a>
 
-                </div>
+                <a id="geral-item" href="{{route('geral').'#geral-item'}}">
+                    <div class="mbl-menu-item @if($route_name == 'geral') active-route @endif">
+                        <i class="far fa-analytics fa-lg fa-fw"></i>
+                    </div>
+                </a>
 
-                {{-- Footer --}}
-                @hasSection('footer')
-                    @include('adminlte::partials.footer.footer')
-                @endif
+                <a id="caixa-item" href="{{route('caixa').'#caixa-item'}}">
+                    <div class="mbl-menu-item @if($route_name == 'caixa') active-route @endif">
+                        <i class="far fa-cash-register fa-lg fa-fw"></i>
+                    </div>
+                </a>
 
-                {{-- Right Control Sidebar --}}
-                @if(config('adminlte.right_sidebar'))
-                    @include('adminlte::partials.sidebar.right-sidebar')
-                @endif
+                <a id="retiradas-item" href="{{route('retiradas').'#retiradas-item'}}">
+                    <div class="mbl-menu-item @if($route_name == 'retiradas') active-route @endif">
+                        <i class="far fa-wallet fa-lg fa-fw"></i>
+                    </div>
+                </a>
+
+                <a id="relatorios-item" href="{{route('relatorios').'#relatorios-item'}}">
+                    <div class="mbl-menu-item @if($route_name == 'relatorios') active-route @endif">
+                        <i class="far fa-file-alt fa-lg fa-fw"></i>
+                    </div>
+                </a>
+
+                <a id="categoria-item" href="{{route('categorias').'#categoria-item'}}">
+                    <div class="mbl-menu-item @if($route_name == 'categorias') active-route @endif">
+                        <i class="fab fa-buffer fa-lg fa-fw"></i>
+                    </div>
+                </a>
+
+                <a id="fp-item" href="{{route('formas-pagamento').'#fp-item'}}">
+                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'formas-pagamento') active-route @endif">
+                        <i class="far fa-credit-card fa-lg fa-fw"></i>
+                    </div>
+                </a>
+
+                <a id="operator-item" href="{{route('configuracoes').'#operator-item'}}">
+                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'configuracoes') active-route @endif">
+                        <i class="far fa-cog fa-lg fa-fw"></i>
+                    </div>
+                </a>
+
+                <a id="conta-item" href="{{route('conta').'#conta-item'}}">
+                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'conta') active-route @endif">
+                        <i class="far fa-user fa-lg fa-fw"></i>
+                    </div>
+                </a>
 
             </div>
+
+        </div>
 
         @else
 
@@ -367,17 +406,28 @@
                                 d="M123.276 112.706l.55 18.708h-1.3c-1.432 0-2.593 1.16-2.593 2.593s1.16 2.593 2.593 2.593h4.065a3.49 3.49 0 0 0 3.49-3.49c0-.594-1.432-9.597-1.126-20.405" />
                         </defs>
                     </svg>
-                    <h3 style="font-size: 22px;" class="my-4 no-results text-center">Ops! Parece que sua mensalidade venceu e seu acesso ao sistema expirou :(</h3>
+
+                    <h3 style="font-size: 22px;" class="my-4 no-results text-center">
+                        Ops! Parece que sua mensalidade venceu e seu acesso à plataforma expirou :(
+                    </h3>
+
                     <div class="d-flex flex-column align-items-center justify-content-center mb-4">
-                        <h3 style="font-size: 23px;" class="no-results-create mb-3">Entre em contato para regularizar sua situação.</h3>
-                        <a href="https://api.whatsapp.com/send?phone=5534998395367&text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20Plataforma%20Cashiers!" target="_blank" class="btn btn-nr"><i class="fad fa-user-headset fa-fw fa-lg mr-2"></i>Fale conosco</a>
+
+                        <h3 style="font-size: 22px;" class="no-results-create mb-3 text-center">
+                            Entre em contato para regularizar sua situação.
+                        </h3>
+
+                        <a href="https://api.whatsapp.com/send?phone=5534998395367&text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20Plataforma%20Cashiers!" target="_blank" class="btn btn-nr">
+                            <i class="fad fa-user-headset fa-fw fa-lg mr-2"></i>
+                            Fale conosco
+                        </a>
                         
                         @php( $logout_url = View::getSection('logout_url') ?? config('adminlte.logout_url', 'logout') )
 
                         <a style="width: 200px;" class="btn btn-default btn-logout btn-block my-4"
                         href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-fw fa-sign-out-alt"></i>
-                        Sair
+                            <i class="fas fa-fw fa-sign-out-alt"></i>
+                            Sair
                         </a>
 
                         <form id="logout-form" action="{{ $logout_url }}" method="POST" style="display: none;">
@@ -386,85 +436,12 @@
                             @endif
                             {{ csrf_field() }}
                         </form>
+
                     </div>
                 </div>
             </div>
         
         @endif
-        
-        <div class="mobile">
-
-            <div class="mbl-top-nav border-bottom">
-
-                <a href="http://127.0.0.1:8000" class="mobile-brand-logo">
-
-    
-                    <img style="margin-top: 0px; width: 32px; height: 32px; max-height: 32px;" src="http://127.0.0.1:8000/vendor/adminlte/dist/img/cashier-logo.png" class="brand-image mr-2">
-                    
-                    
-                    <span style="font-size: 24px !important;" class="brand-text font-weight-light ">
-                        <span class="text-uppercase" style="color: #352B73; font-weight: 600; letter-spacing: 1px;">
-                            Ca<span style="color: #f472b6;">$</span>hiers
-                        </span>
-                    </span>
-                
-                </a>
-                
-            </div>
-            
-            @yield('content')
-
-            <div class="mbl-bottom-nav">
-
-                <?php 
-                  $route_name = Route::currentRouteName();    
-                ?>
-                
-                <a id="home-item" href="{{route('home').'#home-item'}}">
-                    <div style="margin-left: 10px;" class="mbl-menu-item @if($route_name == 'home') active-route @endif">
-                        <i class="far fa-home-alt fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-                <a id="geral-item" href="{{route('geral').'#geral-item'}}">
-                    <div class="mbl-menu-item @if($route_name == 'geral') active-route @endif">
-                        <i class="far fa-analytics fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-                <a id="caixa-item" href="{{route('caixa').'#caixa-item'}}">
-                    <div class="mbl-menu-item @if($route_name == 'caixa') active-route @endif">
-                        <i class="far fa-cash-register fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-                <a id="retiradas-item" href="{{route('retiradas').'#retiradas-item'}}">
-                    <div class="mbl-menu-item @if($route_name == 'retiradas') active-route @endif">
-                        <i class="far fa-wallet fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-                <a id="relatorios-item" href="{{route('relatorios').'#relatorios-item'}}">
-                    <div class="mbl-menu-item @if($route_name == 'relatorios') active-route @endif">
-                        <i class="far fa-file-alt fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-                <a id="categoria-item" href="{{route('categorias').'#categoria-item'}}">
-                    <div class="mbl-menu-item @if($route_name == 'categorias') active-route @endif">
-                        <i class="fab fa-buffer fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-                <a id="fp-item" href="{{route('formas-pagamento').'#fp-item'}}">
-                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'formas-pagamento') active-route @endif">
-                        <i class="far fa-credit-card fa-lg fa-fw"></i>
-                    </div>
-                </a>
-
-            </div>
-
-        </div>
 
     @endif
     
@@ -483,56 +460,5 @@
         })
         //]]>
     </script>
-
-    {{-- <script>
-        
-        // IDENTIFICAR TAMANHO DA TELA
-
-        $(window).on('load', function () {
-
-            var tela = $(window).width();
-
-            const wrapper = document.querySelector('.wrapper');
-            const content_inicial = document.querySelectorAll('.content-inicial');
-            const uk_container = document.querySelectorAll('.uk-container');
-            const desktop_context = document.querySelectorAll('.desktop-context');
-
-            const mobile = document.querySelector('.mobile');
-            const mbl_context = document.querySelectorAll('.mbl-context');
-            const content_mbl = document.querySelectorAll('.content-mbl');
-
-            if(tela <= 600) {
-
-                wrapper.remove();
-
-                content_inicial.forEach(ci => {
-                    ci.remove();
-                });
-
-                uk_container.forEach(uk => {
-                    uk.remove();
-                });
-
-                desktop_context.forEach(dc => {
-                    dc.remove();
-                }); 
-
-            }else{
-
-                mobile.remove();
-
-                mbl_context.forEach(mc => {
-                    mc.remove();
-                });
-
-                content_mbl.forEach(cm => {
-                    cm.remove();
-                });
-
-            }
-
-        })
-            
-    </script> --}}
     
 @stop

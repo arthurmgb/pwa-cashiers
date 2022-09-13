@@ -7,12 +7,6 @@
 
 @section('content')
 
-    <div class="content-inicial">
-
-        @livewire('home')
-
-    </div>
-
     <div class="content-mbl">
 
         @livewire('home')
@@ -36,13 +30,7 @@
 
 @section('js')
     <script src="{{ asset('js/newfont.js') }}"></script>
-    @if(auth()->user()->modal_start === 1)
-        <script>
-            $(document).ready(function(){
-                $("#modalHome").modal('show');
-            });
-        </script>
-    @endif
+    
     <script>
         function changePix(){
             var btn = document.getElementById("btn-pix");

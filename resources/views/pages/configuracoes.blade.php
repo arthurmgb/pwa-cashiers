@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="uk-container">
+    <div class="content-mbl">
 
         @livewire('configuracao')
 

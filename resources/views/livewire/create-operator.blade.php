@@ -22,10 +22,10 @@
                             @enderror
                         </div>
                 </div>
-                <div class="modal-footer py-4">
-                    <button wire:loading.attr="disabled" type="button" class="btn btn-cancel"
+                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                    <button wire:loading.attr="disabled" type="button" class="btn btn-cancel flex-fill order-2"
                         wire:click.prevent="resetNewOperation()" data-dismiss="modal">Cancelar</button>
-                    <button wire:loading.attr="disabled" type="submit" class="btn btn-send">Cadastrar</button>
+                    <button wire:loading.attr="disabled" type="submit" class="btn btn-send flex-fill order-1">Cadastrar</button>
                     </form>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <i class="far fa-arrow-left"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-4">
+                <div class="modal-body py-4 px-2">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente cadastrar este
                         operador?</h5>
@@ -58,11 +58,11 @@
                     </div>
 
                 </div>
-                <div class="modal-footer py-4">
+                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
                     <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button"
-                        class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+                        class="btn btn-cancel flex-fill order-2" data-dismiss="modal">Cancelar</button>
                     <button wire:loading.attr="disabled" wire:click.prevent="save()" type="button"
-                        class="btn btn-send">Confirmar</button>
+                        class="btn btn-send flex-fill order-1">Confirmar</button>
                     </form>
                 </div>
             </div>
