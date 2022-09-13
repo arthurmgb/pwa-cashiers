@@ -1,10 +1,13 @@
 /* Start Var */
-.desktop-context{
+
+/* .desktop-context{
     display: none;
+} */
+body{
+    height: -webkit-fill-available !important;
 }
 
 .mobile{
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }   

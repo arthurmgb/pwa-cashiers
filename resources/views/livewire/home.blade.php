@@ -53,7 +53,7 @@
 
                 <hr class="mbl-hr-2">
 
-                <div class="help-div">
+                <div class="help-div mb-4">
         
                     <h3 class="mbl-home-subtitle mb-2 text-center">
                         Tem alguma dúvida?
