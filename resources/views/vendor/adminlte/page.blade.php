@@ -195,10 +195,10 @@
 
             <div class="mbl-top-nav border-bottom">
 
-                <a href="http://127.0.0.1:8000" class="mobile-brand-logo">
+                <a href="{{route('home')}}" class="mobile-brand-logo">
 
     
-                    <img style="margin-top: 0px; width: 32px; height: 32px; max-height: 32px;" src="http://127.0.0.1:8000/vendor/adminlte/dist/img/cashier-logo.png" class="brand-image mr-2">
+                    <img style="margin-top: 0px; width: 32px; height: 32px; max-height: 32px;" src="{{asset('vendor/adminlte/dist/img/cashier-logo.png')}}" class="brand-image mr-2">
                     
                     
                     <span style="font-size: 24px !important;" class="brand-text font-weight-light ">
