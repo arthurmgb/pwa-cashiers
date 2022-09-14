@@ -4,6 +4,11 @@
     "start_url": "/",
     "icons": [
         {
+            "src": "https://cashiers.com.br/wp-content/uploads/2022/05/android-chrome-512x512-1.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
             "src": "public/vendor/adminlte/dist/favicon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
@@ -15,6 +20,12 @@
         },
         {
             "src": "public/vendor/adminlte/dist/favicon/cashiers-insta-profile.png",
+            "sizes": "720x720",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "https://cashiers.com.br/wp-content/uploads/2021/12/cashiers-insta-profile.png",
             "sizes": "720x720",
             "type": "image/png"
         }
