@@ -3,24 +3,48 @@
 /* .desktop-context{
     display: none;
 } */
-body{
-    height: -webkit-fill-available !important;
+html{
+    height: 100% !important;
 }
-
+body{
+    height: 100% !important;
+}
 .mobile{
+    height: 100% !important;
     display: flex;
     flex-direction: column;
-}   
-.content-mbl{
-    display: flex;
 }
-.mbl-context{
-    background-color: #F3F4F6;
+.mbl-top-nav{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     width: 100vw;
-    height: calc(100vh - 130px);
+    height: 50px;
+    color: #fff;
+    
+}
+.content-mbl{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    background-color: #F3F4F6;
+    width: 100vw;
+    flex: 1;
+}
+.mbl-context{
+   
+    
+}
+.mbl-bottom-nav{
+    background-color: #352B73;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100vw;
+    height: 80px;
+    overflow-x: auto;
 }
 .mbl-card{
     background-color: #fff;
@@ -113,16 +137,6 @@ body{
 
 /* Top */
 
-.mbl-top-nav{
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100vw;
-    height: 50px;
-    color: #fff;
-    
-}
 .mobile-brand-logo{
     display: flex;
     flex-direction: row;
@@ -135,16 +149,6 @@ body{
 
 /* Bottom */
 
-.mbl-bottom-nav{
-    background-color: #352B73;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    width: 100vw;
-    height: 80px;
-    overflow-x: auto;
-}
 .mbl-bottom-nav > a{
     outline: none;
 }

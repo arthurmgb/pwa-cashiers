@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="content-mobile">
+    <div class="content-mbl">
 
         @livewire('conta')
         
