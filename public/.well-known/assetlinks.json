@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "br.com.cashiers.mobile.twa",
+                     "sha256_cert_fingerprints": ["DD:4A:41:2E:6D:78:13:0A:CF:04:11:B6:14:ED:5D:27:13:29:7C:2B:C3:FB:F7:99:74:E6:D9:AB:21:C6:FC:A6"] }
+      }
+]
