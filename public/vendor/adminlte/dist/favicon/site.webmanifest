@@ -2,6 +2,7 @@
     "name": "Cashiers",
     "short_name": "Cashiers",
     "start_url": "/",
+    "scope": "https://mobile.cashiers.com.br/",
     "icons": [
         {
             "src": "https://cashiers.com.br/wp-content/uploads/2022/05/android-chrome-512x512-1.png",
