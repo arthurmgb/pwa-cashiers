@@ -6,6 +6,17 @@
 html, body{
     height: 100% !important;
 }
+.fix-100-main{
+   height: 100% !important;
+}
+.fix-100{
+    height: 100% !important;
+}
+.fix-100-card{
+    height: 100% !important;
+    overflow-y: auto !important;
+    
+}
 ::selection {
     color: #fff !important;
     background: #725BC2 !important;
@@ -158,14 +169,4 @@ html, body{
 }
 .create-account:hover{
     text-decoration: underline;
-}
-.fix-100-main{
-    height: 100% !important;
-}
-.fix-100{
-    height: 100% !important;
-}
-.fix-100-card{
-    height: 100% !important;
-    max-height: 100%;
 }
