@@ -345,53 +345,60 @@
 
     <script>
         Livewire.on('alert', function(message){
-            Swal.fire(
-            'Tudo pronto!',
-            message,
-            'success'
-            )
+            Swal.fire({
+            title: 'Tudo pronto!',
+            text: message,
+            icon: 'success',
+            heightAuto: false,
+            })
         })
         Livewire.on('alert-error', function(message){
-            Swal.fire(
-            'Operação recusada!',
-            message,
-            'error'
-            )
+            Swal.fire({
+            title: 'Operação recusada!',
+            text: message,
+            icon: 'error',
+            heightAuto: false,
+            })
         })
         Livewire.on('error-operator', function(message){
-            Swal.fire(
-            'Atenção!',
-            message,
-            'warning'
-            )
+            Swal.fire({
+            title: 'Atenção!',
+            text: message,
+            icon: 'warning',
+            heightAuto: false,
+            })
         })
         Livewire.on('error-pagamento', function(message){
-            Swal.fire(
-            'Pagamento recusado!',
-            message,
-            'error'
-            )
+            Swal.fire({
+            title: 'Pagamento recusado!',
+            text: message,
+            icon: 'error',
+            heightAuto: false,
+            })
         })
         Livewire.on('alert-locked', function(message){
-            Swal.fire(
-            'Acesso negado!',
-            message,
-            'error'
-            )
+            Swal.fire({
+            title: 'Acesso negado!',
+            text: message,
+            icon: 'error',
+            heightAuto: false,
+            })
         })
         Livewire.on('alert-unlocked', function(message){
-            Swal.fire(
-            'Acesso liberado!',
-            message,
-            'success'
-            )
+            Swal.fire({
+            title: 'Acesso liberado!',
+            text: message,
+            icon: 'success',
+            heightAuto: false,
+            })
         })
         Livewire.on('alert-blocked', function(message){
-            Swal.fire(
-            'Tudo pronto!',
-            message,
-            'success'
-            )
+            Swal.fire({
+            title: 'Tudo pronto!',
+            text: message,
+            icon: 'success',
+            heightAuto: false,
+            })
         })
     </script>
 
