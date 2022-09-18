@@ -101,27 +101,62 @@
                                         {{$data_criacao}}
                                         </span>
                                     </span>
+
+                                    <span class="mbl-span-item">
+                                        Situação: 
+                                        <br>
+                                        @if ($operator->status == 0)
+                                        <span style="color: #22C55E;" class="mbl-variable-op-item ">
+                                         Ativo
+                                        </span>
+                                        @elseif($operator->status == 1)
+                                        <span style="color: #E6274C;" class="mbl-variable-op-item ">
+                                         Inativo
+                                        </span>
+                                        @endif
+                                    </span>
                                     
                                     <div class="d-flex flex-row align-items-center ml-auto mt-1">
+                                        {{-- CHECK STATUS --}}
+                                        @if ($operator->status == 0)
+                                        {{-- EDIT --}}
                                         <div wire:target="edit({{$operator->id}})" wire:loading.attr="disabled"
                                             wire:click.prevent="edit({{$operator->id}})" data-toggle="modal"
                                             data-target="#editarCat"
                                             class="cbe">
                                             <i class="fad fa-edit fa-fw fa-crud fac-edit"></i>
                                         </div>
+                                        
+                                        {{-- PADRÃO --}}
                                         @if ($operator->is_default == 0)
                                             <div wire:target="toggleDefault({{$operator->id}})" wire:loading.attr="disabled"
                                                 wire:click.prevent="toggleDefault({{$operator->id}})"
                                                 class="cbe">
-                                                <i style="color: #6b7280 !important;" class="fad fa-toggle-off fa-fw fa-crud fac-edit mr-0"></i>      
+                                                <i style="color: #6b7280 !important;" class="fad fa-toggle-off fa-fw fa-crud fac-edit"></i>      
                                             </div> 
                                         @elseif($operator->is_default == 1)
                                             <div wire:target="toggleDefault({{$operator->id}})" wire:loading.attr="disabled"
                                                 wire:click.prevent="toggleDefault({{$operator->id}})"
                                                 class="cbe">
-                                                <i style="color: #22c55e !important;" class="fad fa-toggle-on fa-fw fa-crud fac-edit mr-0"></i>
+                                                <i style="color: #22c55e !important;" class="fad fa-toggle-on fa-fw fa-crud fac-edit"></i>
                                             </div>
-                                        @endif  
+                                        @endif
+
+                                        @endif
+
+                                        {{-- STATUS --}}
+                                        @if ($operator->status == 0)
+                                            <div wire:target="toggleStatus({{$operator->id}})" wire:loading.attr="disabled"
+                                                wire:click.prevent="toggleStatus({{$operator->id}})" class="cbe">
+                                                <i style="color: #E6274C !important;" class="fad fa-user-slash fa-fw fa-crud fac-edit mr-0"></i>
+                                            </div> 
+                                        @elseif($operator->status == 1)
+                                            <div wire:target="toggleStatus({{$operator->id}})" wire:loading.attr="disabled"
+                                                wire:click.prevent="toggleStatus({{$operator->id}})" class="cbe">
+                                                <i style="color: #22c55e !important;" class="fad fa-user-check fa-fw fa-crud fac-edit ml-1 mr-0"></i>
+                                            </div>
+                                        @endif
+
                                     </div>
 
                                 </div>
