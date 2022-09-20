@@ -166,7 +166,8 @@ body{
     cursor: pointer;
 }
 .mbl-menu-item:hover{
-    background-color: #f1f1f1;
+    background-color: #fe8ec8;
+    color: #fff;
 }
 .active-route{
     background-color: #F472B6;

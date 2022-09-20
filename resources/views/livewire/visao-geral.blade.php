@@ -30,7 +30,7 @@
                     
                     <div class="div-coins d-flex flex-row flex-wrap">
 
-                        <div class="div-coin-box-light my-1 flex-fill mx-1">
+                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Dinheiro" class="div-coin-box-light my-1 flex-fill mx-1">
                             <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
                                 <i style="color: #01984E;" class="fad fa-money-bill-alt"></i>
                             </span>
@@ -38,7 +38,7 @@
                                 R$ {{$coin_dinheiro}}
                             </span>
                         </div>
-                        <div class="div-coin-box-light my-1 flex-fill mx-1">
+                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Cheques" class="div-coin-box-light my-1 flex-fill mx-1">
                             <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
                                 <i style="color: #458DE3;" class="fad fa-money-check-edit-alt"></i>
                             </span>
@@ -46,7 +46,7 @@
                                 R$ {{$coin_cheque}}
                             </span>
                         </div>
-                        <div class="div-coin-box-light my-1 flex-fill mx-1">
+                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Moedas" class="div-coin-box-light my-1 flex-fill mx-1">
                             <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
                                 <i style="color: #e6c300;" class="fad fa-coins"></i>
                             </span>
@@ -54,7 +54,7 @@
                                 R$ {{$coin_moeda}}
                             </span>
                         </div>
-                        <div class="div-coin-box-light my-1 flex-fill mx-1">
+                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Outros" class="div-coin-box-light my-1 flex-fill mx-1">
                             <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
                                 <i style="color: #10B981;" class="fas fa-cash-register"></i>
                             </span>
@@ -62,7 +62,7 @@
                                 R$ {{$coin_outros}}
                             </span>
                         </div>
-                        <div class="div-coin-box-light my-1 flex-fill mx-1">
+                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Retiradas" class="div-coin-box-light my-1 flex-fill mx-1">
                             <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
                                 <i style="color: #E6274C;" class="fad fa-wallet"></i>
                             </span>

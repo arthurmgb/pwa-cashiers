@@ -40,19 +40,22 @@
                         <div class="mbl-info-about-account my-3">
                             <ul>
                                 <li>
-                                    Visualizar contratos e mensalidades com a Plataforma;
+                                    Visualizar seus contratos e mensalidades com a Plataforma;
                                 </li>
                                 <li>
                                     Acompanhar comissões recebidas e pendentes;
                                 </li>
                                 <li>
-                                    Imprimir recibos e relatórios;
+                                    Imprimir relatórios e recibos;
                                 </li>
                                 <li>
                                     Receber notificações sobre a situação de sua conta;
                                 </li>
                                 <li>
-                                    Editar informações de seu perfil.
+                                    Editar informações de seu perfil;
+                                </li>
+                                <li>
+                                    Acessar módulos adicionais, como gerenciadores de senhas, links e outras ferramentas utilitárias.
                                 </li>
                             </ul>
                         </div>
