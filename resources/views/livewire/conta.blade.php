@@ -82,17 +82,23 @@
             </div>
 
             <div class="d-flex flex-column align-items-center justify-content-start">
-                <div class="help-div mt-3 mb-4">
+                <div class="help-div mt-3 mb-4 d-flex flex-column align-items-center justify-content-center">
         
                     <h3 class="mbl-home-subtitle mb-2 text-center">
                         Tem alguma dúvida?
                     </h3>
+
                     <a class="mbl-home-link text-center"
                         href="https://api.whatsapp.com/send?phone=5534998395367&text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20Plataforma%20Cashiers!"
                         target="_blank">
                         <i class="fas fa-external-link-alt mr10"></i>
                         Entre em contato com o suporte
                     </a>
+
+                    <button onclick="window.location.reload(true)" class="button-relatorio mt-2">
+                        Limpar cache
+                    </button>
+                    
                 </div>
             </div>       
 

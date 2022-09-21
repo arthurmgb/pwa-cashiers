@@ -68,8 +68,8 @@
 
                 <div class="mbl-relatorios-input flex-fill">
 
-                    <button wire:click.prevent="render()" wire:loading.attr="disabled" wire:loading.class="desativado" class="button-relatorio">
-                        <span class="fad fa-search fa-fw fa-lg mr-1"></span>
+                    <button wire:click.prevent="render()" wire:loading.attr="disabled" wire:loading.class="desativado" class="btn btn-new mb-1">
+                        <span class="far fa-search fa-fw fa-lg mr-1"></span>
                         Buscar
                     </button>
 
@@ -77,7 +77,7 @@
 
                 <div class="mbl-relatorios-input flex-fill">
 
-                    <button wire:click.prevent="caixaHoje()" wire:target="caixaHoje()" wire:loading.attr="disabled" class="btn btn-new btn-cx-hoje" type="button">
+                    <button wire:click.prevent="caixaHoje()" wire:loading.attr="disabled" wire:loading.class="desativado" class="btn btn-new" type="button">
                         <i class="fal fa-cash-register fa-fw mr-1 fa-lg"></i>
                         Buscar caixa de hoje
                     </button>
@@ -87,7 +87,7 @@
                 @if (isset($operations))
                     
                     <div class="mbl-relatorios-input flex-fill">
-                        <button wire:click.prevent="resetRelatorio()" wire:loading.attr="disabled" wire:loading.class="desativado" class="button-relatorio">
+                        <button wire:click.prevent="resetRelatorio()" wire:loading.attr="disabled" wire:loading.class="desativado" class="button-relatorio mt-1" style="margin: 0;">
                             <span class="fad fa-broom fa-fw fa-lg mr-1"></span>
                             Limpar busca
                         </button>
@@ -879,6 +879,7 @@
                         <option value="20">20</option>
                         <option value="30">30</option>
                         <option value="50">50</option>
+                        <option value="100">100</option>
                     </select>
                     <span class="ml-3 ipp">Itens por página</span>
                 </div>
