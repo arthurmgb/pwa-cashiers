@@ -3,6 +3,7 @@
 /* .desktop-context{
     display: none;
 } */
+.modal { overflow: auto !important; }
 html{
     height: 100% !important;
 }
