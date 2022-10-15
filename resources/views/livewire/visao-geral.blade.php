@@ -30,39 +30,135 @@
                     
                     <div class="div-coins d-flex flex-row flex-wrap">
 
-                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Dinheiro" class="div-coin-box-light my-1 flex-fill mx-1">
-                            <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
-                                <i style="color: #01984E;" class="fad fa-money-bill-alt"></i>
-                            </span>
-                            <span class="coin-valor">
-                                R$ {{$coin_dinheiro}}
-                            </span>
+                        <div class="dropdown flex-fill" wire:ignore.self data-toggle="tooltip" data-placement="top" title="Dinheiro">
+
+                            <div data-toggle="dropdown" aria-expanded="false" class="div-coin-box-light my-1 mx-1">
+                                <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
+                                    <i style="color: #01984E;" class="fad fa-money-bill-alt"></i>
+                                </span>
+                                <span class="coin-valor">
+                                    R$ {{$coin_dinheiro}}
+                                </span>
+                            </div>
+
+                            <div class="dropdown-menu dropdown-vg-totais">
+
+                                <div class="d-flex flex-column">
+                                    <span>
+                                        Entrou: 
+                                        <span style="color: green; white-space: nowrap;">
+                                            R$ {{$coin_dinheiro_entrada}}
+                                        </span>
+                                    </span>
+                                    <span>
+                                        Saiu: 
+                                        <span style="color: red; white-space: nowrap;">
+                                            R$ {{$coin_dinheiro_saida}}
+                                        </span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+
                         </div>
-                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Cheques" class="div-coin-box-light my-1 flex-fill mx-1">
-                            <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
-                                <i style="color: #458DE3;" class="fad fa-money-check-edit-alt"></i>
-                            </span>
-                            <span class="coin-valor">
-                                R$ {{$coin_cheque}}
-                            </span>
+
+                        <div class="dropdown flex-fill" wire:ignore.self data-toggle="tooltip" data-placement="top" title="Cheques">
+
+                            <div data-toggle="dropdown" aria-expanded="false" class="div-coin-box-light my-1 mx-1">
+                                <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
+                                    <i style="color: #458DE3;" class="fad fa-money-check-edit-alt"></i>
+                                </span>
+                                <span class="coin-valor">
+                                    R$ {{$coin_cheque}}
+                                </span>
+                            </div>
+
+                            <div class="dropdown-menu dropdown-vg-totais">
+
+                                <div class="d-flex flex-column">
+                                    <span>
+                                        Entrou: 
+                                        <span style="color: green; white-space: nowrap;">
+                                            R$ {{$coin_cheque_entrada}}
+                                        </span>
+                                    </span>
+                                    <span>
+                                        Saiu: 
+                                        <span style="color: red; white-space: nowrap;">
+                                            R$ {{$coin_cheque_saida}}
+                                        </span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+
                         </div>
-                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Moedas" class="div-coin-box-light my-1 flex-fill mx-1">
-                            <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
-                                <i style="color: #e6c300;" class="fad fa-coins"></i>
-                            </span>
-                            <span class="coin-valor">
-                                R$ {{$coin_moeda}}
-                            </span>
+
+                        <div class="dropdown flex-fill" wire:ignore.self data-toggle="tooltip" data-placement="top" title="Moedas">
+
+                            <div data-toggle="dropdown" aria-expanded="false" class="div-coin-box-light my-1 mx-1">
+                                <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
+                                    <i style="color: #e6c300;" class="fad fa-coins"></i>
+                                </span>
+                                <span class="coin-valor">
+                                    R$ {{$coin_moeda}}
+                                </span>
+                            </div>
+
+                            <div class="dropdown-menu dropdown-vg-totais">
+
+                                <div class="d-flex flex-column">
+                                    <span>
+                                        Entrou: 
+                                        <span style="color: green; white-space: nowrap;">
+                                            R$ {{$coin_moeda_entrada}}
+                                        </span>
+                                    </span>
+                                    <span>
+                                        Saiu: 
+                                        <span style="color: red; white-space: nowrap;">
+                                            R$ {{$coin_moeda_saida}}
+                                        </span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+
                         </div>
-                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Outros" class="div-coin-box-light my-1 flex-fill mx-1">
-                            <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
-                                <i style="color: #10B981;" class="fas fa-cash-register"></i>
-                            </span>
-                            <span class="coin-valor">
-                                R$ {{$coin_outros}}
-                            </span>
+
+                        <div class="dropdown flex-fill" wire:ignore.self data-toggle="tooltip" data-placement="top" title="Outros">
+
+                            <div data-toggle="dropdown" aria-expanded="false" class="div-coin-box-light my-1 mx-1">
+                                <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
+                                    <i style="color: #10B981;" class="fas fa-cash-register"></i>
+                                </span>
+                                <span class="coin-valor">
+                                    R$ {{$coin_outros}}
+                                </span>
+                            </div>
+
+                            <div class="dropdown-menu dropdown-vg-totais">
+
+                                <div class="d-flex flex-column">
+                                    <span>
+                                        Entrou: 
+                                        <span style="color: green; white-space: nowrap;">
+                                            R$ {{$coin_outros_entrada}}
+                                        </span>
+                                    </span>
+                                    <span>
+                                        Saiu: 
+                                        <span style="color: red; white-space: nowrap;">
+                                            R$ {{$coin_outros_saida}}
+                                        </span>
+                                    </span>
+                                </div>
+                                
+                            </div>
+
                         </div>
-                        <div wire:ignore.self data-toggle="tooltip" data-placement="bottom" title="Retiradas" class="div-coin-box-light my-1 flex-fill mx-1">
+
+                        <div wire:ignore.self data-toggle="tooltip" data-placement="top" title="Retiradas" class="div-coin-box-light my-1 flex-fill mx-1">
                             <span style="border-bottom-left-radius: 6px;" class="emoji-coin ec-totais">
                                 <i style="color: #E6274C;" class="fad fa-wallet"></i>
                             </span>
