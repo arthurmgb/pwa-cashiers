@@ -94,10 +94,6 @@
                         <i class="fas fa-external-link-alt mr10"></i>
                         Entre em contato com o suporte
                     </a>
-
-                    <button onclick="window.location.reload(true)" class="button-relatorio mt-2">
-                        Limpar cache
-                    </button>
                     
                 </div>
             </div>       
