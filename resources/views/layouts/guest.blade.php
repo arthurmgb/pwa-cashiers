@@ -35,5 +35,18 @@
         <div class="font-sans text-gray-900 antialiased fix-100-main">
             {{ $slot }}
         </div>
+        <script>
+
+            const cashiers_login_form = document.querySelector("#cashiers-login-form");
+
+            const cashiers_btn_acessar = document.querySelector("#cashiers-btn-acessar");
+
+            cashiers_login_form.onsubmit = () => {
+
+                cashiers_btn_acessar.disabled = true;
+            
+            }
+
+        </script>
     </body>
 </html>
