@@ -10,7 +10,9 @@
                     Olá, {{ Auth::user()->name }}!
                 </h1>
                 
-                <img id="mbl-global-user-img" class="mbl-img-user mr-3" src="https://app.cashiers.com.br{{ Auth::user()->profile_photo_url }}">
+                <a href="{{route('conta').'#conta-item'}}">
+                    <img id="mbl-global-user-img" class="mbl-img-user mr-3" src="https://app.cashiers.com.br{{ Auth::user()->profile_photo_url }}">
+                </a>
 
                 <script>
 
