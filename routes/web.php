@@ -29,12 +29,12 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/categorias', Categoria::class)->name('categorias');
     Route::get('/configuracoes', Configuracao::class)->name('configuracoes');
     Route::get('/formas-pagamento', FormaPagamento::class)->name('formas-pagamento');
+    Route::get('/meus-planos', UserContrato::class)->name('meus-planos');
     Route::get('/conta', Conta::class)->name('conta');
     // Route::get('/links', Shortcut::class)->name('links');
     // Route::get('/ferramentas', Ferramenta::class)->name('ferramentas');
     // Route::get('/tarefas', Tarefa::class)->name('tarefas');
     // Route::get('/admin', Admin::class)->name('admin');
-    // Route::get('/meus-contratos', UserContrato::class)->name('meus-contratos');
     // Route::get('/minhas-comissoes', UserComissao::class)->name('minhas-comissoes');
     // Route::get('/notificacoes', Notificacao::class)->name('notificacoes');
     // Route::get('/gerenciador-de-senhas', Senha::class)->name('gerenciador-de-senhas');

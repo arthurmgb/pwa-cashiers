@@ -268,7 +268,7 @@
                 </a>
 
                 <a id="conta-item" href="{{route('conta').'#conta-item'}}">
-                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'conta') active-route @endif">
+                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'conta' or $route_name == 'meus-planos') active-route @endif">
                         <i class="far fa-user fa-lg fa-fw"></i>
                     </div>
                 </a>

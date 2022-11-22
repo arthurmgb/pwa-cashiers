@@ -26,36 +26,46 @@
             </div>
 
             <div class="d-flex flex-row align-items-center justify-content-center">
+                <a href="{{route('meus-planos')}}" class="mbl-link-to-my-plans">
+                    <div class="mbl-card my-2 py-3">
+                        <div id="mbl-my-plans">
+                            <span class="mbl-my-account-item">
+                                <i class="far fa-file-signature fa-lg fa-fw"></i>
+                                <span class="ml-1">Meus Planos</span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-                <div class="mbl-card my-2">
+            <div class="d-flex flex-row align-items-center justify-content-center">
+
+                <div class="mbl-card mb-2">
 
                     <div id="mobile-operations-vg">
 
                         <div class="mbl-info-about-account">
                             <span>
-                                Olá <b>{{auth()->user()->name}}</b>! Para a melhor experiência de nossos usuários com a Plataforma, limitamos algumas funcionalidades no aplicativo. Sendo assim, para:
+                                Olá <b>{{auth()->user()->name}}</b>! Esperamos que esteja gostando de usar o aplicativo da <b>Cashiers</b>. Gostaríamos de informar que nem todas as funcionalidades da Plataforma estão disponíveis no aplicativo. Sendo assim, para:
                             </span>
                         </div>
 
                         <div class="mbl-info-about-account my-3">
                             <ul>
                                 <li>
-                                    Visualizar seus contratos e mensalidades com a Plataforma;
-                                </li>
-                                <li>
-                                    Acompanhar comissões recebidas e pendentes;
-                                </li>
-                                <li>
-                                    Imprimir relatórios e recibos;
-                                </li>
-                                <li>
-                                    Receber notificações sobre a situação de sua conta;
-                                </li>
-                                <li>
                                     Editar informações de seu perfil;
                                 </li>
                                 <li>
-                                    Acessar módulos adicionais, como gerenciadores de senhas, links e outras ferramentas utilitárias.
+                                    Imprimir e salvar relatórios;
+                                </li>
+                                <li>
+                                    Visualizar notificações sobre a situação de seus planos e comissões;
+                                </li>
+                                <li>
+                                    Acompanhar comissões à receber e recebidas;
+                                </li>
+                                <li>
+                                    Acessar módulos adicionais, como gerenciadores de tarefas, senhas e links.
                                 </li>
                             </ul>
                         </div>
@@ -81,7 +91,7 @@
 
             </div>
 
-            <div class="d-flex flex-column align-items-center justify-content-start">
+            <div style="padding-bottom: 50px;" class="d-flex flex-column align-items-center justify-content-start">
                 <div class="help-div mt-3 mb-4 d-flex flex-column align-items-center justify-content-center">
         
                     <h3 class="mbl-home-subtitle mb-2 text-center">

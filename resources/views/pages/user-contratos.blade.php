@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Meus contratos')
+@section('title', 'Meus planos')
 
 @section('content_header')
 @stop
 
 @section('content')
 
-    <div style="max-width: 1600px !important;" class="uk-container">
+    <div class="content-mbl">
 
         @livewire('user-contrato')
 
@@ -53,6 +53,9 @@
 @section('js')
     <script src="{{asset('js/newfont.js')}}"></script>
     <script>
+        document.querySelector('#conta-item').scrollIntoView();
+    </script>
+    <script>
         function changePix(){
             var btn = document.getElementById("btn-pix");
             btn.innerHTML = 'Copiado!';
@@ -63,7 +66,7 @@
     </script>
     <script>
         
-        var $col = $('#data-bank');
+        var $col = $('.data-bank-col');
         var $btn_blur = $('#privacy');
 
         $btn_blur.click(function(){

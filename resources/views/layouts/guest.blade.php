@@ -31,7 +31,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body>
+    <body style="user-select: none;">
         <div class="font-sans text-gray-900 antialiased fix-100-main">
             {{ $slot }}
         </div>

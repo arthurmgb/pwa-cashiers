@@ -5,8 +5,8 @@
         <div class="col-12">
 
             <div class="d-flex flex-row align-items-center justify-content-between my-3">
-
-                <h1 class="mbl-home-title text-truncate ml-3">
+                
+                <h1 data-toggle="tooltip" data-placement="bottom" title="{{ Auth::user()->name }}" class="mbl-home-title text-truncate ml-3">
                     Olá, {{ Auth::user()->name }}!
                 </h1>
                 
