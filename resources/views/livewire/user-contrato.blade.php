@@ -98,25 +98,22 @@
                                                 @endphp
 
                                                 @if ($contract->status == 1)
-                                                    <span style="color: #16a34a; font-weight: 600;" class="span-contract mr-3">
+                                                    <span style="color: #16a34a; font-weight: 600;" class="span-contract mr-2">
                                                         Ativo
                                                     </span>
                                                 @elseif($contract->status == 0)
-                                                    <span style="color: #dc2626; font-weight: 600;" class="span-contract mr-3">
+                                                    <span style="color: #dc2626; font-weight: 600;" class="span-contract mr-2">
                                                         Inativo
                                                     </span>
                                                 @elseif($contract->status == 3)
-                                                    <span style="color: #4b5563; font-weight: 600;" class="span-contract mr-3">
+                                                    <span style="color: #4b5563; font-weight: 600;" class="span-contract mr-2">
                                                         Cancelado
                                                     </span>
-                                                @endif                                 
+                                                @endif
 
-                                            <span style="color: #725BC2" class="span-contract mr-3">
-                                                {{$data_contrato}}
-                                            </span>
-
-                                            <button style="padding: 4px 7px;" class="btn btn-light rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#contract-info{{$contract->id}}" aria-expanded="false" aria-controls="contract-info{{$contract->id}}">
+                                            <button style="padding: 4px 7px;" class="btn btn-light text-primary" type="button" data-toggle="collapse" data-target="#contract-info{{$contract->id}}" aria-expanded="false" aria-controls="contract-info{{$contract->id}}">
                                                 <i class="fas fa-info-circle fa-fw"></i>
+                                                Detalhes
                                             </button>                          
 
                                         </div>
@@ -125,15 +122,16 @@
 
                                     <div class="collapse" id="contract-info{{$contract->id}}" wire:ignore.self>
 
-                                        <div style="margin-bottom: 0 !important; padding: 10px 15px 15px 15px!important;" class="card card-body table-responsive yampay-scroll-lg">
+                                        <div style="margin-bottom: 0 !important; padding: 10px 15px 15px 15px!important;" class="card card-body table-responsive mbl-scroll">
 
                                             <table style="cursor: default; white-space: nowrap; user-select: none;" class="table table-borderless">
                                                 <thead class="t-head">
                                                     <tr class="t-head-border">
+                                                        <th>Criação</th>
                                                         <th>Vigência</th>
                                                         <th>Valor</th>
                                                         <th>Vencimento</th>     
-                                                        <th>Comissionado</th>                                                   
+                                                        <th>Comissionado</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="t-body">     
@@ -145,7 +143,11 @@
                         
                                                     <tr class="tr-hover">
 
-                                                        <td style="font-size: 14px; font-weight: 600; color: #725BC2;" class="align-middle">                                                 
+                                                        <td style="font-size: 14px; font-weight: 500; color: #2563eb;" class="align-middle">
+                                                            {{$data_contrato}}       
+                                                        </td>
+
+                                                        <td style="font-size: 14px; font-weight: 600; color: #725BC2;" class="align-middle">
                                                             {{$contract->periodo}} meses                   
                                                         </td>
 
@@ -188,7 +190,7 @@
                                 </div>
                                     
                                 <div id="collapse{{$contract->id}}" class="collapse" aria-labelledby="heading{{$contract->id}}" data-parent="#accordion{{$contract->id}}" wire:ignore.self>
-                                    <div class="card-body table-responsive yampay-scroll-lg">
+                                    <div class="card-body table-responsive mbl-scroll">
 
                                         <table style="cursor: default; white-space: nowrap; user-select: none;" class="table table-borderless mb-2">
                                             <thead class="t-head">
@@ -487,7 +489,7 @@
                                     <span class="period">Quantidade: {{$get_mensalidades_a_vencer}}</span>
                                 </div>                     
                             </div>
-                            <button wire:key="mbl-plans-btn1" wire:click.prevent="alternarModalidade(0)" wire:loading.attr="disabled" class="btn btn-sm ml-auto btn-outline-danger p-1 mr-2" data-tooltip="Mensalidades vencidas" data-flow="top">
+                            <button wire:key="mbl-plans-btn1" wire:click.prevent="alternarModalidade(0)" wire:loading.attr="disabled" class="btn btn-sm ml-auto btn-outline-danger p-1 mr-2">
                                 <i class="fas fa-sort-alt fa-fw fa-lg"></i>
                             </button>
                         @elseif($modalidade_mensalidade === 0)
@@ -498,7 +500,7 @@
                                     <span class="period">Quantidade: {{$get_mensalidades_vencidas}}</span>
                                 </div>                     
                             </div>
-                            <button wire:key="mbl-plans-btn2" wire:click.prevent="alternarModalidade(1)" wire:loading.attr="disabled" class="btn btn-sm ml-auto btn-outline-success p-1 mr-2" data-tooltip="Mensalidades à vencer" data-flow="top">
+                            <button wire:key="mbl-plans-btn2" wire:click.prevent="alternarModalidade(1)" wire:loading.attr="disabled" class="btn btn-sm ml-auto btn-outline-success p-1 mr-2">
                                 <i class="fas fa-sort-alt fa-fw fa-lg"></i>
                             </button>
                         @endif
@@ -537,7 +539,7 @@
                         </div>
                     @endif 
                             
-                    <div class="card-body px-0 py-0 table-responsive yampay-scroll-lg">
+                    <div class="card-body px-0 py-0 table-responsive mbl-scroll">
 
                         @if($get_mensalidades->count())
 
