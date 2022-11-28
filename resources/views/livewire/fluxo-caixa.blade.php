@@ -67,12 +67,43 @@
 
                             <div class="receita-alert d-flex flex-column align-items-start mb-3">
 
+                                @if ($option == [1, 0])
+
                                 <span>
-                                    Receita: <b>R$ @if ($option == [0]) -@endif{{ $receita_valor }}</b> 
-                                    <br>
-                                    Total de operações: {{ $operations_find }} 
-                                    <br>
-                                    Operações na página: {{ $operations->count() }}
+                                    Total de entradas: 
+                                    <b style="color: #00A3A3;">
+                                        R$ {{ $receita_entrada }}
+                                    </b>
+                                </span>
+
+                                <span>
+                                    Total de saídas: 
+                                    <b style="color: #E6274C;">
+                                    - R$ {{ $receita_saida }}
+                                    </b>
+                                </span>
+
+                                @endif
+
+                                <span>
+                                    Receita: 
+                                    <b>
+                                        @if ($option == [0]) - @endif R$ {{ $receita_valor }}
+                                    </b>
+                                </span>
+
+                                <span>
+                                    Total de operações: 
+                                    <b>
+                                        {{ $operations_find }}
+                                    </b>
+                                </span>
+
+                                <span>
+                                    Operações na página: 
+                                    <b>
+                                        {{ $operations->count() }}
+                                    </b>
                                 </span>
 
                                 <a class="mbl-limpar-filtro mt-3 ml-auto" wire:click.prevent="geraReceita()" href="#">

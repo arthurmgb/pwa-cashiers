@@ -511,7 +511,7 @@
                             </button>
                             <div style="padding: 20px !important; width: 300px !important; max-width: 300px !important; min-width: 300px !important;" class="dropdown-menu text-uppercase" aria-labelledby="drop_details2">                        
                                 <span style="font-size: 13px; font-weight: 600; color: #555;">
-                                Total de mensalidade à vencer: <br>
+                                Total de mensalidades à vencer: <br>
                                 <span class="ml-1" style="font-size: 15px; font-weight: 600; color: #725BC2;">
                                     R$ {{$get_total_mensalidades_a_vencer}}
                                 </span>

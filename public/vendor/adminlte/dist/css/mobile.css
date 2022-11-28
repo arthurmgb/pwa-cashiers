@@ -402,6 +402,8 @@ body{
         border-radius: 4px;
         text-transform: uppercase;
         cursor: pointer;
+        border: 1px solid #ee368c;
+        transition: all 0.2s ease;
     }
     .mbl-limpar-filtro:hover{
         background-color: #fff;
