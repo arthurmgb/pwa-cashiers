@@ -197,7 +197,7 @@
                     
                     <div class="block-vg mb-2 order-3">
                         <div class="title-block fs-title-block d-flex flex-row align-items-center">
-                            Receita&nbsp;
+                            Saldo&nbsp;
                             <span class="period">/ Hoje</span>
                             <div class="div-details ml-auto">
                                 <span data-target="#detalhesHoje" data-toggle="modal" class="details-font">+ Detalhes</span>
@@ -236,7 +236,7 @@
                     
                     <div class="block-vg mb-2 order-2">
                         <div class="title-block fs-title-block d-flex flex-row align-items-center">
-                            Receita&nbsp;
+                            Saldo&nbsp;
                             <span class="period">/ No mês</span>
                             <div class="div-details ml-auto">
                                 <span data-target="#detalhesMes" data-toggle="modal" class="details-font">+ Detalhes</span>
@@ -791,7 +791,7 @@
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="detalhesHojeLabel">
-                        Detalhes da receita 
+                        Detalhes do saldo <br> 
                         <span style="font-weight: 500; text-transform: uppercase; font-size: 22px;">
                             Hoje
                         </span>
@@ -816,7 +816,9 @@
                         </div>
                         <hr class="my-2">
                         <div class="operation-block d-flex flex-row justify-content-between align-items-center">
-                            <label class="type-operation mt-1" for="total-op">Total em caixa</label>                          
+                            <label class="type-operation mt-1" for="total-op">
+                                Saldo hoje    
+                            </label>                          
                             <span style="font-weight: 500;" class="value-real">R$ {{ $total_hoje }}</span>
                         </div>
                         <div class="total-operations-done mt-2 d-flex flex-row justify-content-between align-items-center">
@@ -922,7 +924,7 @@
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="detalhesMesLabel">
-                        Detalhes da receita
+                        Detalhes do saldo <br>
                         <span style="font-weight: 500; text-transform: uppercase; font-size: 22px;">
                             No mês
                         </span>
@@ -947,11 +949,13 @@
                         </div>
                         <hr class="my-2">
                         <div class="operation-block d-flex flex-row justify-content-between align-items-center">
-                            <label class="type-operation mt-1" for="total-op">Total em caixa</label>                          
+                            <label class="type-operation mt-1" for="total-op">
+                                Saldo no mês    
+                            </label>                          
                             <span style="font-weight: 500;" class="value-real">R$ {{ $total_mes }}</span>
                         </div>
                         <div class="total-operations-done mt-2 d-flex flex-row justify-content-between align-items-center">
-                            <span>{{ $op_mes }} operações <span class="bold-span">realizadas nesse mês.</span></span>
+                            <span>{{ $op_mes }} operações <span class="bold-span">realizadas neste mês.</span></span>
                         </div>
                         <hr class="mt-3 mb-2">
                         <label class="type-operation mt-2 mb-3">Capital por espécie / <span style="color: #777;">No mês</span></label>

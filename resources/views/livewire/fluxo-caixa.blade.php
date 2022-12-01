@@ -35,7 +35,7 @@
                 </a>
 
                 <a wire:click.prevent="geraReceita()" wire:loading.attr="disabled" class="flex-fill mbl-filter-base mbl-filter-soma @if($receita == true) filter-s @endif">
-                    <span>Gerar <br> receita</span>
+                    <span>Exibir <br>saldo</span>
                 </a>
 
             </div>
@@ -86,7 +86,7 @@
                                 @endif
 
                                 <span>
-                                    Receita: 
+                                    Saldo: 
                                     <b>
                                         @if ($option == [0]) - @endif R$ {{ $receita_valor }}
                                     </b>

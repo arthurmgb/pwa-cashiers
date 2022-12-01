@@ -232,7 +232,7 @@
 
                                 <div class="mbl-dbi-item flex-fill">
                                     <span class="rc-alert-font-2 text-uppercase ">
-                                        Entradas no período                                      
+                                        Entradas no período
                                     </span>
                                 </div>
                                 
@@ -280,7 +280,7 @@
                                 
                                 <div class="mbl-dbi-item flex-fill">
                                     <span class="rc-alert-font-2 text-uppercase ">
-                                        Receita no período 
+                                        Saldo no período 
                                     </span>
                                 </div>
 
