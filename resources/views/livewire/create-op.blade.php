@@ -31,14 +31,14 @@
 
                             <input wire:model="state.tipo" wire:click="changeOperation" value="1" class="radio" type="radio" name="operation"
                                 id="op-entrada">
-                            <label class="label-op flex-fill" for="op-entrada">
+                            <label class="label-op label-green flex-fill" for="op-entrada">
                                 <i class="fad fa-arrow-to-top fa-fw fa-lg mr-1"></i>
                                 Entrada
                             </label>
 
                             <input wire:model="state.tipo" wire:click="changeOperation" value="0" class="radio" type="radio" name="operation"
                                 id="op-saida">
-                            <label class="label-op flex-fill" for="op-saida">
+                            <label class="label-op label-red flex-fill" for="op-saida">
                                 Saída
                                 <i class="fad fa-arrow-from-top fa-fw fa-lg ml-1"></i>
                             </label>
