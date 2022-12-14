@@ -109,6 +109,12 @@
 
         <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
         <script src="{{ asset('vendor/adminlte/dist/js/clipboard.min.js') }}"></script>
+        {{-- MOBILE SCRIPTS --}}
+        <script>
+            
+
+        </script>
+        {{-- MOBILE SCRIPTS --}}
         <script>
 
             // Add slideDown animation to Bootstrap dropdown when expanding.

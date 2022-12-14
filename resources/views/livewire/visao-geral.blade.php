@@ -424,7 +424,7 @@
                                 <div class="card-header mbl-op-item-header" id="heading{{$operation->id}}">
                                 <h2 class="mb-0">
                                     <button class="btn btn-block text-left mbl-op-item-btn" type="button" data-toggle="collapse" data-target="#collapse{{$operation->id}}" aria-expanded="false" aria-controls="collapse{{$operation->id}}">
-                                    <i class="fad fa-chevron-down fa-fw mr-2"></i>
+                                    <i class="fad fa-chevron-right fa-fw mr-2"></i>
                                     {{$operation->descricao}}
                                     </button>
                                 </h2>

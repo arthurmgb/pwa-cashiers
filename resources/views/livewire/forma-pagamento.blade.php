@@ -49,7 +49,7 @@
                                 <div class="card-header mbl-op-item-header" id="heading{{$single_fp->id}}">
                                 <h2 class="mb-0">
                                     <button class="btn btn-block text-left mbl-op-item-btn" type="button" data-toggle="collapse" data-target="#collapse{{$single_fp->id}}" aria-expanded="false" aria-controls="collapse{{$single_fp->id}}">
-                                    <i class="fad fa-chevron-down fa-fw mr-2"></i>
+                                    <i class="fad fa-chevron-right fa-fw mr-2"></i>
                                     {{$single_fp->descricao}}
                                     </button>
                                 </h2>

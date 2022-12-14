@@ -74,12 +74,12 @@
 
                                 <div style="padding: 0px !important; margin-bottom: 0 !important;" class="card">
 
-                                <div style="background-color: #f9fafb;" class="card-header py-2 px-1" id="heading{{$contract->id}}">
+                                <div style="background-color: rgba(0,0,0,.03);" class="card-header py-2 px-1" id="heading{{$contract->id}}">
 
                                     <h2 class="mb-0 d-flex flex-column align-items-center">
 
-                                        <button style="color: #725BC2;" class="btn px-1 py-1 btn-link btn-block collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse{{$contract->id}}" aria-expanded="false" aria-controls="collapse{{$contract->id}}">
-                                            <i class="fad fa-chevron-down fa-fw mr-1"></i> 
+                                        <button style="color: #725BC2;" class="btn px-1 py-4 btn-link btn-block collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse{{$contract->id}}" aria-expanded="false" aria-controls="collapse{{$contract->id}}">
+                                            <i class="fad fa-chevron-right fa-fw mr-1"></i> 
                                             Plataforma Cashiers
                                             @if($contract->is_test == 1)
                                             <br>
