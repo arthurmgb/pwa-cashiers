@@ -457,6 +457,7 @@ body{
         border-radius: 5px;
     }
     .mbl-rc-alert-font{
+        width: 100%;
         font-size: 1rem;
         color: #725bc2;
     }

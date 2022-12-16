@@ -237,7 +237,7 @@
                                 </div>
                                 
                                 <div class="mbl-dbi-item flex-fill">
-                                    <span style="color: green; font-size: 20px;">
+                                    <span style="color: #00A3A3; font-size: 20px;">
                                         <b>R$ {{ $receita_entrada }}</b>
                                     </span>
                                 </div>
@@ -253,7 +253,7 @@
                                 </div>
 
                                 <div class="mbl-dbi-item flex-fill">
-                                    <span style="color: red; font-size: 20px;">
+                                    <span style="color: #E6274C; font-size: 20px;">
                                         <b>- R$ {{ $rec_only_saida }}</b>
                                     </span>
                                 </div>
@@ -269,7 +269,7 @@
                                 </div>
 
                                 <div class="mbl-dbi-item flex-fill">
-                                    <span style="color: red; font-size: 20px;">
+                                    <span style="color: #2483ff; font-size: 20px;">
                                         <b>- R$ {{ $receita_ret }}</b>
                                     </span>
                                 </div>
@@ -285,7 +285,7 @@
                                 </div>
 
                                 <div class="mbl-dbi-item flex-fill">
-                                    <span style="color: green; font-size: 22px;">
+                                    <span style="color: #00A3A3; font-size: 22px;">
                                         <b>R$ {{ $receita_valor }}</b>
                                     </span>
                                 </div>
