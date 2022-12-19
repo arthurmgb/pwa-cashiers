@@ -13,21 +13,21 @@
                 <div class="mbl-relatorios-input flex-fill">
 
                     <span class="span-relatorio">Período de</span>
-                    <input wire:model.defer="data.inicial" id="from" type="date" class="search-relatorio" min="2000-01-01" max="2100-01-01" autocomplete="off">
+                    <input style="min-height: 45px;" wire:model.defer="data.inicial" id="from" type="date" class="search-relatorio" min="2000-01-01" max="2100-01-01" autocomplete="off">
 
                 </div>
 
                 <div class="mbl-relatorios-input flex-fill">
 
                     <span class="span-relatorio">até</span>
-                    <input wire:model.defer="data.final" id="to" type="date" class="search-relatorio" min="2000-01-01" max="2100-01-01" autocomplete="off">
+                    <input style="min-height: 45px;" wire:model.defer="data.final" id="to" type="date" class="search-relatorio" min="2000-01-01" max="2100-01-01" autocomplete="off">
 
                 </div>
 
                 <div class="mbl-relatorios-input flex-fill">
 
                     <span class="span-relatorio">Categoria</span>
-                    <select wire:model="categoria" style="padding-left: 15px; width: 100%; font-weight: 500; font-size: 14px;" class="form-control modal-input-cat yampay-scroll" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                    <select wire:model="categoria" style="padding-left: 15px; min-height: 45px; width: 100%; font-weight: 500; font-size: 14px;" class="form-control modal-input-cat yampay-scroll" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                         <option value="">Todas</option>
                         @foreach ($categories as $categorie)
                             <option value="{{$categorie->id}}">{{$categorie->descricao}}</option>
@@ -40,7 +40,7 @@
 
                     <span class="span-relatorio">Operador</span>
                     @if($operators_filter->count())
-                        <select wire:model="operador_filter" style="padding-left: 15px; width: 100%; font-weight: 500; font-size: 14px;" class="form-control modal-input-cat yampay-scroll" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                        <select wire:model="operador_filter" style="padding-left: 15px; min-height: 45px; width: 100%; font-weight: 500; font-size: 14px;" class="form-control modal-input-cat yampay-scroll" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                             <option value="">Todos</option>
                             @foreach ($operators_filter as $single_operator)
                                 <option value="{{$single_operator->id}}">{{$single_operator->nome}}</option>
@@ -57,7 +57,7 @@
                 <div class="mbl-relatorios-input flex-fill">
 
                     <span class="span-relatorio">Formas de pagamento</span>
-                    <select wire:model="forma_pag" style="padding-left: 15px; width: 100%; font-weight: 500; font-size: 14px;" class="form-control modal-input-cat yampay-scroll" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                    <select wire:model="forma_pag" style="padding-left: 15px; min-height: 45px; width: 100%; font-weight: 500; font-size: 14px;" class="form-control modal-input-cat yampay-scroll" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                         <option value="">Todas</option>
                         @foreach ($methods as $method)
                             <option value="{{$method->id}}">{{$method->descricao}}</option>
@@ -66,9 +66,9 @@
 
                 </div>
 
-                <div class="mbl-relatorios-input flex-fill">
+                <div class="mbl-relatorios-input flex-fill mt-1">
 
-                    <button wire:click.prevent="render()" wire:loading.attr="disabled" wire:loading.class="desativado" class="btn btn-new mb-1">
+                    <button style="min-height: 45px;" wire:click.prevent="render()" wire:loading.attr="disabled" wire:loading.class="desativado" class="btn btn-new mb-1">
                         <span class="far fa-search fa-fw fa-lg mr-1"></span>
                         Buscar
                     </button>
@@ -77,7 +77,7 @@
 
                 <div class="mbl-relatorios-input flex-fill">
 
-                    <button wire:click.prevent="caixaHoje()" wire:loading.attr="disabled" wire:loading.class="desativado" class="btn btn-new" type="button">
+                    <button style="min-height: 45px;" wire:click.prevent="caixaHoje()" wire:loading.attr="disabled" wire:loading.class="desativado" class="btn btn-new" type="button">
                         <i class="fal fa-cash-register fa-fw mr-1 fa-lg"></i>
                         Buscar caixa de hoje
                     </button>
@@ -87,7 +87,7 @@
                 @if (isset($operations))
                     
                     <div class="mbl-relatorios-input flex-fill">
-                        <button wire:click.prevent="resetRelatorio()" wire:loading.attr="disabled" wire:loading.class="desativado" class="button-relatorio mt-1" style="margin: 0;">
+                        <button style="min-height: 45px;" wire:click.prevent="resetRelatorio()" wire:loading.attr="disabled" wire:loading.class="desativado" class="button-relatorio mt-1" style="margin: 0;">
                             <span class="fad fa-broom fa-fw fa-lg mr-1"></span>
                             Limpar busca
                         </button>
@@ -99,7 +99,7 @@
 
             <div class="d-flex flex-row align-items-center justify-content-center">
 
-                <div class="mbl-card my-2">
+                <div class="mbl-card my-2 @if (isset($operations) and $operations->count())p-0 @endif">
 
                     <div style="margin-top: 50px; margin-bottom: 50px;" wire:loading wire:loading.class="d-flex flex-row align-items-center justify-content-center">
                         <i style="color: #725BC2; opacity: 90%;" class="fad fa-spinner-third fa-fw fa-3x fa-spin"></i>
@@ -546,7 +546,7 @@
 
                         {{-- END RECEITA ALERT --}}
                     
-                        <div class="accordion" id="accordionOperations">
+                        <div style="padding: 20px;" class="accordion pt-0" id="accordionOperations">
 
                             @php
                                 $dia_atual = Carbon\Carbon::now();
@@ -664,7 +664,7 @@
 
                                     <span class="mbl-span-item">
                                         Data: 
-                                        <span class="mbl-variable-op-item ">
+                                        <span class="mbl-variable-op-item-purple">
                                         {{$data_operacao}}
                                         </span>
                                     </span>

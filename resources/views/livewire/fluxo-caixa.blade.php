@@ -232,7 +232,7 @@
 
                                     <span class="mbl-span-item">
                                         Data: 
-                                        <span class="mbl-variable-op-item ">
+                                        <span class="mbl-variable-op-item-purple">
                                         {{$data_operacao}}
                                         </span>
                                     </span>

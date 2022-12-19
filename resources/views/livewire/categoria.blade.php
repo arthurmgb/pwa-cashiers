@@ -122,16 +122,22 @@
                                     <span class="mbl-span-item">
                                         Data de cadastro: 
                                         <br>
-                                        <span class="mbl-variable-op-item ">
+                                        <span class="mbl-variable-op-item-purple">
                                         {{$data_operacao}}
                                         </span>
                                     </span>
 
                                     <span class="mbl-span-item">
                                         Tipo: 
-                                        <span class="mbl-variable-op-item-purple">
-                                        {{$categoria->tipo}}
-                                        </span>
+                                        @if ($categoria->tipo == 'Entrada')
+                                            <span style="background: #00a3a3;" class="mbl-operacao-label">
+                                                {{$categoria->tipo}}
+                                            </span>
+                                        @else
+                                            <span style="background: #E6274C;" class="mbl-operacao-label">
+                                                {{$categoria->tipo}}
+                                            </span>
+                                        @endif
                                     </span>
 
                                     <span class="mbl-span-item">
@@ -147,7 +153,7 @@
                                         @endif
                                     </span>
                                     
-                                    <div class="d-flex flex-row align-items-center ml-auto mt-1">
+                                    <div class="d-flex flex-row align-items-center ml-auto mt-3">
                                         <div wire:target="edit({{ $categoria->id }})" wire:loading.attr="disabled"
                                             wire:click.prevent="edit({{ $categoria->id }})" data-toggle="modal"
                                             data-target="#editarCat" class="cbe">

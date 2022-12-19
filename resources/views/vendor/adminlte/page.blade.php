@@ -195,8 +195,7 @@
 
             <div class="mbl-top-nav border-bottom">
 
-                <a href="{{route('home')}}" class="mobile-brand-logo">
-
+                <div class="mobile-brand-logo">
     
                     <img style="margin-top: 0px; width: 32px; height: 32px; max-height: 32px;" src="{{asset('vendor/adminlte/dist/img/cashier-logo.png')}}" class="brand-image mr-2">
                     
@@ -207,7 +206,7 @@
                         </span>
                     </span>
                 
-                </a>
+                </div>
                 
             </div>
             
@@ -219,55 +218,55 @@
                   $route_name = Route::currentRouteName();    
                 ?>
                 
-                <a id="home-item" href="{{route('home').'#home-item'}}">
+                <a id="home-item" href="{{route('home').'#home-item'}}" onclick="loadMenu(this)">
                     <div style="margin-left: 10px;" class="mbl-menu-item @if($route_name == 'home') active-route @endif">
                         <i class="far fa-home-alt fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="geral-item" href="{{route('geral').'#geral-item'}}">
+                <a id="geral-item" href="{{route('geral').'#geral-item'}}" onclick="loadMenu(this)">
                     <div class="mbl-menu-item @if($route_name == 'geral') active-route @endif">
                         <i class="far fa-analytics fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="caixa-item" href="{{route('caixa').'#caixa-item'}}">
+                <a id="caixa-item" href="{{route('caixa').'#caixa-item'}}" onclick="loadMenu(this)">
                     <div class="mbl-menu-item @if($route_name == 'caixa') active-route @endif">
                         <i class="far fa-cash-register fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="retiradas-item" href="{{route('retiradas').'#retiradas-item'}}">
+                <a id="retiradas-item" href="{{route('retiradas').'#retiradas-item'}}" onclick="loadMenu(this)">
                     <div class="mbl-menu-item @if($route_name == 'retiradas') active-route @endif">
                         <i class="far fa-wallet fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="relatorios-item" href="{{route('relatorios').'#relatorios-item'}}">
+                <a id="relatorios-item" href="{{route('relatorios').'#relatorios-item'}}" onclick="loadMenu(this)">
                     <div class="mbl-menu-item @if($route_name == 'relatorios') active-route @endif">
                         <i class="far fa-file-alt fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="categoria-item" href="{{route('categorias').'#categoria-item'}}">
+                <a id="categoria-item" href="{{route('categorias').'#categoria-item'}}" onclick="loadMenu(this)">
                     <div class="mbl-menu-item @if($route_name == 'categorias') active-route @endif">
                         <i class="fab fa-buffer fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="fp-item" href="{{route('formas-pagamento').'#fp-item'}}">
-                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'formas-pagamento') active-route @endif">
+                <a id="fp-item" href="{{route('formas-pagamento').'#fp-item'}}" onclick="loadMenu(this)">
+                    <div class="mbl-menu-item @if($route_name == 'formas-pagamento') active-route @endif">
                         <i class="far fa-credit-card fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="operator-item" href="{{route('configuracoes').'#operator-item'}}">
-                    <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'configuracoes') active-route @endif">
+                <a id="operator-item" href="{{route('configuracoes').'#operator-item'}}" onclick="loadMenu(this)">
+                    <div class="mbl-menu-item @if($route_name == 'configuracoes') active-route @endif">
                         <i class="far fa-cog fa-lg fa-fw"></i>
                     </div>
                 </a>
 
-                <a id="conta-item" href="{{route('conta').'#conta-item'}}">
+                <a id="conta-item" href="{{route('conta').'#conta-item'}}" onclick="loadMenu(this)">
                     <div style="margin-right: 10px;" class="mbl-menu-item @if($route_name == 'conta' or $route_name == 'meus-planos') active-route @endif">
                         <i class="far fa-user fa-lg fa-fw"></i>
                     </div>
@@ -450,6 +449,20 @@
 @section('adminlte_js')
     @stack('js')
     @yield('js')
+
+    <script>
+        function loadMenu(anchor){
+
+            var iconToLoad = anchor.querySelector("i");
+            var divToCheck = anchor.querySelector("div");
+
+            if(!divToCheck.classList.contains('active-route')){
+                iconToLoad.className = "";
+                iconToLoad.classList.add('fad', 'fa-spinner-third', 'fa-spin', 'fa-lg', 'fa-fw');
+            }
+
+        }
+    </script>
 
     <script>
         //<![CDATA[

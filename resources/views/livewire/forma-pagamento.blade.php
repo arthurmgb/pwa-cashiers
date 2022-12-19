@@ -68,7 +68,7 @@
                                     <span class="mbl-span-item">
                                         Data de cadastro: 
                                         <br>
-                                        <span class="mbl-variable-op-item ">
+                                        <span class="mbl-variable-op-item-purple">
                                         {{$data_criacao}}
                                         </span>
                                     </span>
@@ -86,7 +86,7 @@
                                         @endif
                                     </span>
                                     
-                                    <div class="d-flex flex-row align-items-center ml-auto mt-1">
+                                    <div class="d-flex flex-row align-items-center ml-auto mt-3">
                                         <div wire:target="edit({{ $single_fp->id }})" wire:loading.attr="disabled"
                                             wire:click.prevent="edit({{ $single_fp->id }})" data-toggle="modal"
                                             data-target="#editarCat" class="cbe">

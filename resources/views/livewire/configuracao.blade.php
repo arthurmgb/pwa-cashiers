@@ -97,26 +97,25 @@
                                     <span class="mbl-span-item">
                                         Data de cadastro: 
                                         <br>
-                                        <span class="mbl-variable-op-item ">
+                                        <span class="mbl-variable-op-item-purple">
                                         {{$data_criacao}}
                                         </span>
                                     </span>
 
                                     <span class="mbl-span-item">
                                         Situação: 
-                                        <br>
                                         @if ($operator->status == 0)
-                                        <span style="color: #22C55E;" class="mbl-variable-op-item ">
+                                        <span style="background: #00a3a3;" class="mbl-operacao-label">
                                          Ativo
                                         </span>
                                         @elseif($operator->status == 1)
-                                        <span style="color: #E6274C;" class="mbl-variable-op-item ">
+                                        <span style="background: #E6274C;" class="mbl-operacao-label">
                                          Inativo
                                         </span>
                                         @endif
                                     </span>
                                     
-                                    <div class="d-flex flex-row align-items-center ml-auto mt-1">
+                                    <div class="d-flex flex-row align-items-center ml-auto mt-3">
                                         {{-- CHECK STATUS --}}
                                         @if ($operator->status == 0)
                                         {{-- EDIT --}}
