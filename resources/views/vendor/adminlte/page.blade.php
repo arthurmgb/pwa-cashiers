@@ -454,16 +454,17 @@
         function loadMenu(anchor){
             
             var divToCheck = anchor.querySelector("div");
+            var iconToLoad = anchor.querySelector("i");
 
             if(!divToCheck.classList.contains('active-route')){
                 
                 var element = divToCheck.innerHTML;
                 
-                divToCheck.innerHTML = "";
-
-                divToCheck.innerHTML = "<i class='fad fa-spinner-third fa-spin fa-lg fa-fw'></i>"
+                iconToLoad.className = "";
+                iconToLoad.classList.add('fad', 'fa-spinner-third', 'fa-spin', 'fa-lg', 'fa-fw');
 
                 setTimeout(() => {
+                    divToCheck.innerHTML = "";
                     divToCheck.innerHTML = element;
                 }, 3000);
 
