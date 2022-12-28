@@ -463,9 +463,14 @@
                 iconToLoad.className = "";
                 iconToLoad.classList.add('fad', 'fa-spinner-third', 'fa-spin', 'fa-lg', 'fa-fw');
 
+                divToCheck.style.backgroundColor = "#fe8ec8";
+                divToCheck.style.color = "#fff";
+
                 setTimeout(() => {
                     divToCheck.innerHTML = "";
                     divToCheck.innerHTML = element;
+                    divToCheck.style.backgroundColor = "#fff";
+                    divToCheck.style.color = "#352B73";
                 }, 3000);
 
             }

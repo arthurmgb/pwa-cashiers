@@ -207,10 +207,6 @@ body{
     border-radius: 50%;
     cursor: pointer;
 }
-.mbl-menu-item:hover{
-    background-color: #fe8ec8;
-    color: #fff;
-}
 .active-route{
     background-color: #F472B6;
     color: #fff;
