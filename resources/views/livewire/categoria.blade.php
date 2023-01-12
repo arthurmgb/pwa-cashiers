@@ -437,14 +437,14 @@
                     <div class="confirmation-msg text-center mb-3">
                         <p class="m-0 mb-3 px-4">
                             Ao clicar em <span class="msg-bold">Confirmar</span>, essa categoria de operação será
-                            editada no sistema.
+                            editada na plataforma.
                         </p>
                         <button type="button" wire:loading.attr="disabled" wire:click.prevent="alternate()"
                             data-dismiss="modal" class="px-4 verify-font">Verificar dados da categoria</button>
                     </div>
 
                 </div>
-                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                <div class="modal-footer py-2 d-flex flex-column align-items-center justify-content-center mbl-modal-footer-btn">
                     <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button"
                         class="btn btn-cancel flex-fill order-2" data-dismiss="modal">Cancelar</button>
                     <button wire:loading.attr="disabled" wire:click.prevent="update()" type="button"
@@ -475,12 +475,12 @@
                     <div class="confirmation-msg text-center mb-3">
                         <p class="m-0 mb-3 px-4">
                             Ao clicar em <span class="msg-bold">Confirmar</span>, esta categoria de operação será
-                            apagada e não poderá mais ser utilizada no sistema.
+                            apagada e não poderá mais ser utilizada na plataforma.
                         </p>
                     </div>
 
                 </div>
-                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                <div class="modal-footer py-2 d-flex flex-column align-items-center justify-content-center mbl-modal-footer-btn">
 
                     <button type="button" class="btn btn-cancel flex-fill order-2" data-dismiss="modal">
                         Cancelar

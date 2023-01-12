@@ -143,7 +143,7 @@
                         </div>
 
                 </div>
-                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                <div class="modal-footer py-2 d-flex flex-column align-items-center justify-content-center mbl-modal-footer-btn">
 
                     <button wire:loading.attr="disabled" type="button" class="btn btn-cancel flex-fill order-2" wire:click.prevent="resetNewOperation()" data-dismiss="modal">
                         Cancelar
@@ -179,14 +179,14 @@
                     <div class="confirmation-msg text-center mb-3">
                         <p class="m-0 mb-3 px-4">
                             Ao clicar em <span class="msg-bold">Confirmar</span>, uma nova operação será realizada e não
-                            poderá mais ser excluída do sistema.
+                            poderá mais ser excluída da plataforma. Para excluir uma operação, entre em contato com nosso suporte.
                         </p>
                         <button type="button" wire:loading.attr="disabled" wire:click.prevent="alternate()"
                             data-dismiss="modal" class="px-4 verify-font">Verificar dados da operação</button>
                     </div>
 
                 </div>
-                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                <div class="modal-footer py-2 d-flex flex-column align-items-center justify-content-center mbl-modal-footer-btn">
 
                     <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button" class="btn btn-cancel flex-fill order-2" data-dismiss="modal">
                         Cancelar

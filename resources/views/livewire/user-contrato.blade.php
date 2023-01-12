@@ -67,6 +67,19 @@
                     <div id="mobile-operations-vg">
 
                     @if ($contracts->count())
+
+                    <div class="mbl-title-block mbl-default-operator-style mt-2">
+
+                        <div wire:ignore data-toggle="tooltip" data-html="true" data-placement="bottom" title="Para visualizar todo o conteúdo das tabelas nesta página, basta segurar e arrastar para o lado em cima da tabela." class="div-ttp-op-default">
+                        
+                            <i class="fad fa-info-circle fa-fw fa-lg fp-info-ico mr-2">
+                            </i>
+
+                            Aperte aqui para ver instruções
+
+                        </div>
+                        
+                    </div>
                     
                         @foreach ($contracts as $contract)
                                             
@@ -74,11 +87,11 @@
 
                                 <div style="padding: 0px !important; margin-bottom: 0 !important;" class="card">
 
-                                <div style="background-color: rgba(0,0,0,.03);" class="card-header py-2 px-1" id="heading{{$contract->id}}">
+                                <div style="background-color: rgba(0,0,0,.03);" class="card-header p-0" id="heading{{$contract->id}}">
 
                                     <h2 class="mb-0 d-flex flex-column align-items-center">
 
-                                        <button style="color: #725BC2;" class="btn px-1 py-4 btn-link btn-block collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse{{$contract->id}}" aria-expanded="false" aria-controls="collapse{{$contract->id}}">
+                                        <button style="color: #725BC2; background-color: #eeeeee;" class="btn px-1 py-4 btn-link btn-block collapsed font-weight-bold border-bottom" type="button" data-toggle="collapse" data-target="#collapse{{$contract->id}}" aria-expanded="false" aria-controls="collapse{{$contract->id}}">
                                             <i class="fad fa-chevron-right fa-fw mr-1"></i> 
                                             Plataforma Cashiers
                                             @if($contract->is_test == 1)
@@ -91,10 +104,10 @@
                                             @endif
                                         </button>
 
-                                        <div class="div-accordion-right d-flex flex-row align-items-center mb-2">
+                                        <div class="div-accordion-right d-flex flex-row align-items-center py-2">
 
                                                 @php
-                                                    $data_contrato = $contract->created_at->format('d/m/Y');                       
+                                                    $data_contrato = $contract->created_at->format('d/m/Y');
                                                 @endphp
 
                                                 @if ($contract->status == 1)
@@ -112,7 +125,7 @@
                                                 @endif
 
                                             <button style="padding: 4px 7px;" class="btn btn-light text-primary" type="button" data-toggle="collapse" data-target="#contract-info{{$contract->id}}" aria-expanded="false" aria-controls="contract-info{{$contract->id}}">
-                                                <i class="fas fa-info-circle fa-fw"></i>
+                                                <i class="fas fa-plus-circle fa-fw"></i>
                                                 Detalhes
                                             </button>                          
 

@@ -1438,7 +1438,7 @@
 
                         <div class="confirmation-msg text-center mb-3">
                             <p class="m-0 mb-3 px-4">
-                                Ao clicar em <span class="msg-bold">Confirmar</span>, a mensalidade será paga para este usuário do sistema.
+                                Ao clicar em <span class="msg-bold">Confirmar</span>, a mensalidade será paga para este usuário na plataforma.
                             </p>                      
                         </div>
 
@@ -1472,7 +1472,7 @@
 
                         <div class="confirmation-msg text-center mb-3">
                             <p class="m-0 mb-3 px-4">
-                                Ao clicar em <span class="msg-bold">Confirmar</span>, a mensalidade será estornada para este usuário do sistema.
+                                Ao clicar em <span class="msg-bold">Confirmar</span>, a mensalidade será estornada para este usuário na plataforma.
                             </p>                      
                         </div>
 
@@ -1541,7 +1541,7 @@
 
                         <div class="confirmation-msg text-center mb-3">
                             <p class="m-0 mb-3 px-4">
-                                Ao clicar em <span class="msg-bold">Confirmar</span>, este contrato será cancelado no sistema.
+                                Ao clicar em <span class="msg-bold">Confirmar</span>, este contrato será cancelado na plataforma.
                                 <br>
                                 <span class="msg-bold text-uppercase">Atenção:</span> Esta ação é irreversível e o contrato não poderá ser ativo novamente!
                             </p>                      
@@ -1577,7 +1577,7 @@
 
                         <div class="confirmation-msg text-center mb-3">
                             <p class="m-0 mb-3 px-4">
-                                Ao clicar em <span class="msg-bold">Confirmar</span>, este contrato será inteiramente excluído do sistema.
+                                Ao clicar em <span class="msg-bold">Confirmar</span>, este contrato será inteiramente excluído na plataforma.
                                 <br>
                                 <span class="msg-bold text-uppercase">Atenção:</span> Esta ação é irreversível e o contrato não poderá ser visualizado novamente!
                             </p>                      

@@ -6,12 +6,12 @@
 
             <div class="d-flex flex-row align-items-center justify-content-between my-3">
                 
-                <h1 data-toggle="tooltip" data-placement="bottom" title="{{ Auth::user()->name }}" class="mbl-home-title text-truncate ml-3">
+                <h1 data-toggle="tooltip" data-placement="bottom" title="{{ Auth::user()->name }}" class="mbl-home-title text-truncate mx-2">
                     Olá, {{ Auth::user()->name }}!
                 </h1>
                 
                 <a href="{{route('conta').'#conta-item'}}">
-                    <img id="mbl-global-user-img" class="mbl-img-user mr-3" src="https://app.cashiers.com.br{{ Auth::user()->profile_photo_url }}">
+                    <img id="mbl-global-user-img" class="mbl-img-user mr-2" src="https://app.cashiers.com.br{{ Auth::user()->profile_photo_url }}">
                 </a>
 
                 <script>

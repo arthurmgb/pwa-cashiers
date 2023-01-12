@@ -22,7 +22,7 @@
                             @enderror
                         </div>
                 </div>
-                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                <div class="modal-footer py-2 d-flex flex-column align-items-center justify-content-center mbl-modal-footer-btn">
                     <button wire:loading.attr="disabled" type="button" class="btn btn-cancel flex-fill order-2"
                         wire:click.prevent="resetNewOperation()" data-dismiss="modal">Cancelar</button>
                     <button wire:loading.attr="disabled" type="submit" class="btn btn-send flex-fill order-1">Cadastrar</button>
@@ -51,14 +51,14 @@
 
                     <div class="confirmation-msg text-center mb-3">
                         <p class="m-0 mb-3 px-4">
-                            Ao clicar em <span class="msg-bold">Confirmar</span>, um novo operador de caixa será cadastrado no sistema.
+                            Ao clicar em <span class="msg-bold">Confirmar</span>, um novo operador de caixa será cadastrado na plataforma.
                             <br>
                             <span class="msg-bold text-uppercase">Atenção: </span>Este operador não poderá ser excluído futuramente!
                         </p>                      
                     </div>
 
                 </div>
-                <div class="modal-footer py-2 d-flex flex-row flex-wrap align-items-center justify-content-center">
+                <div class="modal-footer py-2 d-flex flex-column align-items-center justify-content-center mbl-modal-footer-btn">
                     <button wire:loading.attr="disabled" wire:click.prevent="resetOperation()" type="button"
                         class="btn btn-cancel flex-fill order-2" data-dismiss="modal">Cancelar</button>
                     <button wire:loading.attr="disabled" wire:click.prevent="save()" type="button"

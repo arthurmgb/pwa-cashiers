@@ -92,7 +92,7 @@
 
                         <div class="confirmation-msg text-center mb-3">
                             <p class="m-0 mb-3 px-4">
-                                Ao clicar em <span class="msg-bold">Confirmar</span>, um novo contrato será cadastrado para este usuário do sistema.
+                                Ao clicar em <span class="msg-bold">Confirmar</span>, um novo contrato será cadastrado para este usuário na plataforma.
                             </p>                      
                         </div>
 
