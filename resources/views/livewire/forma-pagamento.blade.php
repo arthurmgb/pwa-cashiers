@@ -290,7 +290,7 @@
     <!-- Modal Editar -->
     <div class="modal fade" id="editarCat" tabindex="-1" aria-labelledby="editarCatLabel" aria-hidden="true"
         wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="editarCatLabel">Editar forma de pagamento</h5>
@@ -298,7 +298,7 @@
                         <i class="fal fa-times"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-4">
+                <div class="modal-body py-4 px-4 mbl-modal-scroll">
 
                     <form wire:submit.prevent="confirmation()">
                         <div class="form-group mb-1 d-flex flex-row flex-wrap align-items-center justify-content-center">
@@ -336,7 +336,7 @@
     <!-- Modal Editar Confirmação -->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="edit-confirmation" tabindex="-1"
         aria-labelledby="edit-confirmationLabel" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="edit-confirmationLabel">Confirmação de edição</h5>
@@ -345,7 +345,7 @@
                         <i class="far fa-arrow-left"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-2">
+                <div class="modal-body py-4 px-2 mbl-modal-scroll">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente editar esta
                         forma de pagamento?</h5>
@@ -374,7 +374,7 @@
     <!-- Modal Deletar Confirmação -->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="delete-cat-confirmation" tabindex="-1"
         aria-labelledby="delete-cat-confirmationLabel" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="delete-cat-confirmationLabel">Confirmação de apagamento</h5>
@@ -383,7 +383,7 @@
                         <i class="fal fa-times"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-2">
+                <div class="modal-body py-4 px-2 mbl-modal-scroll">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente apagar esta
                         forma de pagamento?</h5>

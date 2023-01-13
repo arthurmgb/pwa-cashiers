@@ -2,7 +2,7 @@
     <!-- Modal Operação-->
     <div class="modal fade" id="operacao" tabindex="-1" aria-labelledby="operacaoLabel" aria-hidden="true"
         wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="operacaoLabel">Novo operador</h5>
@@ -10,7 +10,7 @@
                         <i class="fal fa-times"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-4">
+                <div class="modal-body py-4 px-4 mbl-modal-scroll">
 
                     <form wire:submit.prevent="confirmation()">
                         <div class="form-group mb-0">
@@ -35,7 +35,7 @@
     <!-- Modal Confirmação-->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="confirm-operation" tabindex="-1"
         aria-labelledby="confirm-operationLabel" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="confirm-operationLabel">Confirmação de cadastro</h5>
@@ -44,7 +44,7 @@
                         <i class="far fa-arrow-left"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-2">
+                <div class="modal-body py-4 px-2 mbl-modal-scroll">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente cadastrar este
                         operador?</h5>

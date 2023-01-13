@@ -349,7 +349,7 @@
     <!-- Modal Editar -->
     <div class="modal fade" id="editarCat" tabindex="-1" aria-labelledby="editarCatLabel" aria-hidden="true"
         wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="editarCatLabel">Editar operador</h5>
@@ -357,7 +357,7 @@
                         <i class="fal fa-times"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-4">
+                <div class="modal-body py-4 px-4 mbl-modal-scroll">
 
                     <form wire:submit.prevent="confirmation()">                       
                         <div class="form-group mb-0">
@@ -381,7 +381,7 @@
     <!-- Modal Editar Confirmação -->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="edit-confirmation" tabindex="-1"
         aria-labelledby="edit-confirmationLabel" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="edit-confirmationLabel">Confirmação de edição</h5>
@@ -390,7 +390,7 @@
                         <i class="far fa-arrow-left"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-2">
+                <div class="modal-body py-4 px-2 mbl-modal-scroll">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente editar este
                         operador?</h5>

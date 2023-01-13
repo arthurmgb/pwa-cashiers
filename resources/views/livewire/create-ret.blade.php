@@ -2,7 +2,7 @@
     <!-- Modal Operação-->
     <div class="modal fade" id="operacao" tabindex="-1" aria-labelledby="operacaoLabel" aria-hidden="true"
         wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="operacaoLabel">Nova retirada</h5>
@@ -10,7 +10,7 @@
                         <i class="fal fa-times"></i>
                     </button>
                 </div>
-                <div class="modal-body pt-3 pb-4 px-4">
+                <div class="modal-body pt-3 pb-4 px-4 mbl-modal-scroll">
                     <div class="div-refreshing d-flex flex-row align-items-center justify-content-end m-0 p-0">
                         <div wire:click="refreshOp()" class="refreshing-component d-flex flex-row align-items-center">
                             <div wire:loading.remove wire:target="refreshOp" class="div-icon-refreshed">
@@ -118,7 +118,7 @@
     <!-- Modal Confirmação-->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="confirm-operation" tabindex="-1"
         aria-labelledby="confirm-operationLabel" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal-custom">
                 <div class="modal-header">
                     <h5 class="modal-title px-3 py-3" id="confirm-operationLabel">Confirmação <br> da operação</h5>
@@ -127,7 +127,7 @@
                         <i class="far fa-arrow-left"></i>
                     </button>
                 </div>
-                <div class="modal-body py-4 px-4">
+                <div class="modal-body py-4 px-4 mbl-modal-scroll">
 
                     <h5 class="modal-confirmation-msg m-0 text-center px-4 my-3">Deseja realmente realizar esta
                         retirada?</h5>
