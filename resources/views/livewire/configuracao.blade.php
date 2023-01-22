@@ -28,7 +28,7 @@
                             </span>
                         </div>
 
-                        @if ($operators->count())
+                        @if ($operators_count > 0)
 
                             <div class="mbl-title-block mb-2">
                                 <i style="color: #db2777;" class="fad fa-user-crown fa-fw fa-lg mr-2"></i> 
@@ -57,6 +57,17 @@
                                 
                             </div>
                             
+                            <div class="d-flex flex-row align-items-center justify-content-start pt-3">
+                            
+                                <button wire:key="op_toggler_active" wire:click.prevent="toggleOperatorTableStatus()" wire:loading.attr="disabled" class="flex-fill btn mr-0 @if($sort_operator_status == 0) btn-success @else btn-outline-success  @endif" style="border-bottom-right-radius: 0; border-top-right-radius: 0; @if($sort_operator_status == 0) pointer-events: none; @endif">
+                                    Ativos ({{$operators_active_count}})
+                                </button>
+    
+                                <button wire:key="op_toggler_inactive" wire:click.prevent="toggleOperatorTableStatus()" wire:loading.attr="disabled" class="flex-fill btn mr-2 @if($sort_operator_status == 1) btn-danger @else btn-outline-danger  @endif" style="border-bottom-left-radius: 0; border-top-left-radius: 0; @if($sort_operator_status == 1) pointer-events: none; @endif">
+                                    Inativos ({{$operators_inactive_count}})
+                                </button>
+                                
+                            </div>
 
                         @endif
                         
