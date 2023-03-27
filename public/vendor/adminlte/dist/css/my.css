@@ -1,5 +1,6 @@
 *{
     font-family: 'Rubik', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 body{
     background-color: #F4F6F8 !important;
